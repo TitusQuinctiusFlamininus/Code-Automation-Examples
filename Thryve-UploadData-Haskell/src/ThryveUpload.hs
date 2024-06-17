@@ -18,9 +18,11 @@ import qualified Data.ByteString             as B
 endToEndTrial :: IO ()
 endToEndTrial = do
         accToken <- generateThryveUser
-        putStrLn $ "Thryve User Created : Access Token for Session : -> "++accToken
+        putStrLn $ "\n Thryve User Created : Access Token for Session : -> "++accToken++"\n "
         uTime <- uploadThryveUserData accToken 
-        putStrLn $ "Thryve User Health Data Uploaded at TimeStamp: -> "++uTime
+        putStrLn $ "Thryve User Health Data Uploaded at TimeStamp: -> "++uTime++"\n "
+        cloudData <- downloadThryveUserData accToken uTime
+        putStrLn $ "Thryve User Health Data Downloaded: -> "++cloudData++"\n "
 
 -- Function that accesses the Thryve Server and requests for a Thryve User
 -- to be generated. An AccessToken type is returned
@@ -41,7 +43,8 @@ generateThryveUser = do
 -- Function that Uploads the Thryve User's Health Data, represented as JSON
 uploadThryveUserData :: AccessToken -> IO UploadTimestamp
 uploadThryveUserData accToken = do
-    request' <- parseRequest ("PUT "++uploadDataUrl)
+    stampTime <- findCurrentTime
+    request'  <- parseRequest ("PUT "++uploadDataUrl)
     let request
             = setRequestMethod "PUT"
             $ setRequestHeader "Content-Type"         ["application/json; charset=utf-8"  ]
@@ -52,5 +55,21 @@ uploadThryveUserData accToken = do
             $ setRequestSecure True
             $ setRequestPort 443
             $ request'
-    (httpBS request >>= (\c -> putStrLn ("Response Code After Upload: -> "++(show . getResponseStatusCode $ c)))) >> findCurrentTime  
+    (httpBS request >>= (\c -> putStrLn ("Response Code After Upload: -> "++(show . getResponseStatusCode $ c)))) >> return stampTime 
+    
+-- Function that Uploads the Thryve User's Health Data, represented as JSON
+downloadThryveUserData :: AccessToken -> UploadTimestamp -> IO HealthData
+downloadThryveUserData accToken tstamp = do
+    request' <- parseRequest ("POST "++downloadDataUrl)
+    let request
+            = setRequestMethod "POST"
+            $ setRequestHeader "Content-Type"         ["application/x-www-form-urlencoded"  ]
+            $ setRequestHeader "Authorization"        [authorizationHeader                  ]
+            $ setRequestHeader "AppAuthorization"     [appAuthorizationHeader               ]
+            $ setRequestHeader "authenticationToken"  [createByteStream accToken            ]
+            $ setRequestBody (RequestBodyBS $ createByteStream ("authenticationToken="++accToken++"&createdAfterUnix="++tstamp))
+            $ setRequestSecure True
+            $ setRequestPort 443
+            $ request'
+    httpBS request >>= (return . map (chr . fromEnum) . B.unpack . getResponseBody)
     
