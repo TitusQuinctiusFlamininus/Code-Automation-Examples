@@ -1,6 +1,6 @@
 {-# LANGUAGE OverloadedStrings #-}
 
-module ThryveUpload( endToEndTrial ) where
+module ThryveUpload( retrieveThryveCloudData ) where
 
 -- Our Libraries
 import ThryveTypes
@@ -8,18 +8,17 @@ import ThryveConstants
 import ThryveUtils
 
 --External Helper Libraries 
-import            Data.Maybe
 import            Data.Aeson                    as A
+import            Data.Char                     (chr)
 import            Network.HTTP.Simple
 import            Network.HTTP.Client.Conduit 
-import            Data.Char                     (chr)
-import qualified  Data.Text.Internal            as T
 import qualified  Data.ByteString               as B
 
 
+
 -- Entry function to the end-to-end test
-endToEndTrial :: IO (Maybe ThryveHealthData)
-endToEndTrial = do
+retrieveThryveCloudData :: IO (Maybe ThryveHealthData)
+retrieveThryveCloudData = do
         accToken <- generateThryveUser
         putStrLn $ "\n Thryve User Created : Access Token for Session : -> "++accToken++"\n "
         uTime <- uploadThryveUserData accToken 

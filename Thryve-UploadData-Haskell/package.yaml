@@ -28,6 +28,7 @@ dependencies:
 - aeson
 - time
 - text
+- HUnit
 
 ghc-options:
 - -Wall
