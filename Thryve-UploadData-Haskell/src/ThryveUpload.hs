@@ -8,10 +8,10 @@ import ThryveConstants
 import ThryveUtils
 
 --External Helper Libraries
-import           Data.Aeson
 import           Network.HTTP.Simple
-import           Data.Char             (chr)
-import qualified Data.ByteString       as B
+import           Network.HTTP.Client.Conduit 
+import           Data.Char                   (chr)
+import qualified Data.ByteString             as B
 
 
 -- Entry function to the end-to-end test
@@ -19,7 +19,8 @@ endToEndTrial :: IO ()
 endToEndTrial = do
         accToken <- generateThryveUser
         putStrLn $ "Thryve User Created : Access Token for Session : -> "++accToken
-
+        uTime <- uploadThryveUserData accToken 
+        putStrLn $ "Thryve User Health Data Uploaded at TimeStamp: -> "++uTime
 
 -- Function that accesses the Thryve Server and requests for a Thryve User
 -- to be generated. An AccessToken type is returned
@@ -34,8 +35,22 @@ generateThryveUser = do
             $ setRequestSecure True
             $ setRequestPort 443
             $ request'
-    response <- httpBS request
-    return . map (chr . fromEnum) . B.unpack $ getResponseBody response
+    httpBS request >>= (return . map (chr . fromEnum) . B.unpack . getResponseBody)
 
 
-
+-- Function that Uploads the Thryve User's Health Data, represented as JSON
+uploadThryveUserData :: AccessToken -> IO UploadTimestamp
+uploadThryveUserData accToken = do
+    request' <- parseRequest ("PUT "++uploadDataUrl)
+    let request
+            = setRequestMethod "PUT"
+            $ setRequestHeader "Content-Type"         ["application/json; charset=utf-8"  ]
+            $ setRequestHeader "Authorization"        [authorizationHeader                ]
+            $ setRequestHeader "AppAuthorization"     [appAuthorizationHeader             ]
+            $ setRequestHeader "authenticationToken"  [createByteStream accToken          ]
+            $ setRequestBody (RequestBodyBS . createByteStream $ hData)
+            $ setRequestSecure True
+            $ setRequestPort 443
+            $ request'
+    (httpBS request >>= (\c -> putStrLn ("Response Code After Upload: -> "++(show . getResponseStatusCode $ c)))) >> findCurrentTime  
+    
