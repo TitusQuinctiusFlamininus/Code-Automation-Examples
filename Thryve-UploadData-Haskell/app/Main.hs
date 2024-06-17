@@ -6,6 +6,6 @@ import ThryveUpload
 
 -- Program entry point 
 main :: IO ()
-main = endToEndTrial
+main =  endToEndTrial >>= putStrLn . show
 
 

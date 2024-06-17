@@ -9,6 +9,7 @@ import ThryveConstants
 --External imports
 import qualified Data.ByteString         as B
 import qualified Data.ByteString.Char8   as C
+import qualified Data.ByteString.Lazy    as L
 import Data.Char                         (chr)
 import Data.ByteString.Base64            (encode)
 import Data.Time.Clock.POSIX             (getPOSIXTime)
@@ -36,3 +37,7 @@ appAuthorizationHeader  =  createByteStream ("Basic "++encodeAsBase64 (authID++"
 findCurrentTime        :: IO UploadTimestamp
 findCurrentTime         = ((round . (* 1000)) <$> getPOSIXTime) >>= (return . show)
                   
+-- Remove unwanted first and last square bracket character in the given list of chracters
+flick :: [Char] -> L.ByteString
+flick []      =  ""
+flick xs      =  L.fromStrict . C.pack . tail . init $ xs

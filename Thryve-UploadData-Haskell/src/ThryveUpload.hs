@@ -7,22 +7,28 @@ import ThryveTypes
 import ThryveConstants
 import ThryveUtils
 
---External Helper Libraries
-import           Network.HTTP.Simple
-import           Network.HTTP.Client.Conduit 
-import           Data.Char                   (chr)
-import qualified Data.ByteString             as B
+--External Helper Libraries 
+import            Data.Maybe
+import            Data.Aeson                    as A
+import            Network.HTTP.Simple
+import            Network.HTTP.Client.Conduit 
+import            Data.Char                     (chr)
+import qualified  Data.Text.Internal            as T
+import qualified  Data.ByteString               as B
 
 
 -- Entry function to the end-to-end test
-endToEndTrial :: IO ()
+endToEndTrial :: IO (Maybe ThryveHealthData)
 endToEndTrial = do
         accToken <- generateThryveUser
         putStrLn $ "\n Thryve User Created : Access Token for Session : -> "++accToken++"\n "
         uTime <- uploadThryveUserData accToken 
         putStrLn $ "Thryve User Health Data Uploaded at TimeStamp: -> "++uTime++"\n "
-        cloudData <- downloadThryveUserData accToken uTime
-        putStrLn $ "Thryve User Health Data Downloaded: -> "++cloudData++"\n "
+        downloadThryveUserData accToken uTime >>= return . A.decode . flick
+
+
+        
+        
 
 -- Function that accesses the Thryve Server and requests for a Thryve User
 -- to be generated. An AccessToken type is returned

@@ -27,6 +27,7 @@ dependencies:
 - yaml
 - aeson
 - time
+- text
 
 ghc-options:
 - -Wall
