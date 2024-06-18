@@ -2,11 +2,14 @@
 
 module ThryveUtils where 
 
+
 -- Our Stuff
 import ThryveTypes
 import ThryveConstants
 
 --External imports
+import Data.Maybe
+import qualified Data.Map as M
 import qualified Data.ByteString         as B
 import qualified Data.ByteString.Char8   as C
 import qualified Data.ByteString.Lazy    as L
@@ -25,13 +28,18 @@ encodeAsBase64          =  map (chr . fromEnum) . B.unpack . encode . C.pack
 createByteStream       :: [Char] -> C.ByteString
 createByteStream        =  C.pack
 
+-- Given some key, lookup the corresponding thryve constant value for it
+checkFor :: [Char] -> [Char]
+checkFor = fromJust . (flip M.lookup) thryveConstants
+
+
 --Value of the AUTHORIZATION HEADER
 authorizationHeader    :: C.ByteString
-authorizationHeader     =  createByteStream ("Basic "++encodeAsBase64 (username++":"++password))
+authorizationHeader     =  createByteStream ("Basic "++encodeAsBase64 (checkFor "username"++":"++checkFor "password"))
 
 --Value of the APP AUTHORIZATION HEADER
 appAuthorizationHeader :: C.ByteString
-appAuthorizationHeader  =  createByteStream ("Basic "++encodeAsBase64 (authID++":"++authSecret))
+appAuthorizationHeader  =  createByteStream ("Basic "++encodeAsBase64 (checkFor "authID"++":"++checkFor "authSecret"))
 
 -- Function to obtain the Current Unix POSIX Time
 findCurrentTime        :: IO UploadTimestamp
@@ -41,3 +49,4 @@ findCurrentTime         = ((round . (* 1000)) <$> getPOSIXTime) >>= (return . sh
 flick :: [Char] -> L.ByteString
 flick []      =  ""
 flick xs      =  L.fromStrict . C.pack . tail . init $ xs
+

@@ -4,36 +4,41 @@ module ThryveUpload( retrieveThryveCloudData ) where
 
 -- Our Libraries
 import ThryveTypes
-import ThryveConstants
 import ThryveUtils
+import ThryveConstants
 
 --External Helper Libraries 
-import            Data.Aeson                    as A
-import            Data.Char                     (chr)
+import            Data.Aeson                     as A
+import            Data.Char                      (chr)
 import            Network.HTTP.Simple
 import            Network.HTTP.Client.Conduit 
-import qualified  Data.ByteString               as B
+import            Control.Monad.IO.Class
+import            Control.Monad.Trans.Class
+import            Control.Monad.Trans.State.Lazy
+import qualified  Data.ByteString                 as B
+
 
 
 
 -- Entry function to the end-to-end test
-retrieveThryveCloudData :: IO (Maybe ThryveHealthData)
+retrieveThryveCloudData :: ThryveRest (Maybe ThryveHealthData) ThryveSession ThryveConstants
 retrieveThryveCloudData = do
-        accToken <- generateThryveUser
-        putStrLn $ "\n Thryve User Created : Access Token for Session : -> "++accToken++"\n "
-        uTime <- uploadThryveUserData accToken 
-        putStrLn $ "Thryve User Health Data Uploaded at TimeStamp: -> "++uTime++"\n "
-        downloadThryveUserData accToken uTime >>= return . A.decode . flick
+        generateThryveUser
+        k <- lift get
+        liftIO . putStrLn $ "\n Thryve User Created : Access Token for Session : -> "++fst k++"\n "
+        uploadThryveUserData 
+        k' <- lift get
+        liftIO . putStrLn $ "Thryve User Health Data Uploaded at TimeStamp: -> "++snd k'++"\n "
+        downloadThryveUserData 
 
 
-        
-        
+
 
 -- Function that accesses the Thryve Server and requests for a Thryve User
 -- to be generated. An AccessToken type is returned
-generateThryveUser :: IO AccessToken
+generateThryveUser :: ThryveRest (Maybe ThryveHealthData) ThryveSession ThryveConstants
 generateThryveUser = do
-    request' <- parseRequest ("POST "++userCreationUrl)
+    request' <- parseRequest ("POST "++ checkFor "userCreationUrl")
     let request
             = setRequestMethod "POST"
             $ setRequestHeader "Content-Type"     ["application/x-www-form-urlencoded"]
@@ -42,14 +47,17 @@ generateThryveUser = do
             $ setRequestSecure True
             $ setRequestPort 443
             $ request'
-    httpBS request >>= (return . map (chr . fromEnum) . B.unpack . getResponseBody)
+    resp <- liftIO $ httpBS request
+    (lift $ put ((map (chr . fromEnum) . B.unpack . getResponseBody $ resp), [])) >> return Nothing
+    
 
 
 -- Function that Uploads the Thryve User's Health Data, represented as JSON
-uploadThryveUserData :: AccessToken -> IO UploadTimestamp
-uploadThryveUserData accToken = do
-    stampTime <- findCurrentTime
-    request'  <- parseRequest ("PUT "++uploadDataUrl)
+uploadThryveUserData :: ThryveRest (Maybe ThryveHealthData) ThryveSession ThryveConstants
+uploadThryveUserData = do
+    (accToken, _) <- lift get 
+    liftIO findCurrentTime >>= (\t -> lift $ put (accToken, t)) 
+    request'  <- parseRequest ("PUT "++checkFor "uploadDataUrl")
     let request
             = setRequestMethod "PUT"
             $ setRequestHeader "Content-Type"         ["application/json; charset=utf-8"  ]
@@ -60,12 +68,14 @@ uploadThryveUserData accToken = do
             $ setRequestSecure True
             $ setRequestPort 443
             $ request'
-    (httpBS request >>= (\c -> putStrLn ("Response Code After Upload: -> "++(show . getResponseStatusCode $ c)))) >> return stampTime 
+    httpBS request >>= (\c -> liftIO $ putStrLn ("Response Code After Upload: -> "++(show . getResponseStatusCode $ c))) >> return Nothing
+                            
     
 -- Function that Uploads the Thryve User's Health Data, represented as JSON
-downloadThryveUserData :: AccessToken -> UploadTimestamp -> IO HealthData
-downloadThryveUserData accToken tstamp = do
-    request' <- parseRequest ("POST "++downloadDataUrl)
+downloadThryveUserData ::  ThryveRest (Maybe ThryveHealthData) ThryveSession ThryveConstants
+downloadThryveUserData= do
+    (accToken, tstamp) <- lift get 
+    request' <- parseRequest ("POST "++checkFor "downloadDataUrl")
     let request
             = setRequestMethod "POST"
             $ setRequestHeader "Content-Type"         ["application/x-www-form-urlencoded"  ]
@@ -76,5 +86,5 @@ downloadThryveUserData accToken tstamp = do
             $ setRequestSecure True
             $ setRequestPort 443
             $ request'
-    httpBS request >>= (return . map (chr . fromEnum) . B.unpack . getResponseBody)
+    httpBS request >>= (return . A.decode . flick . map (chr . fromEnum) . B.unpack . getResponseBody)
     

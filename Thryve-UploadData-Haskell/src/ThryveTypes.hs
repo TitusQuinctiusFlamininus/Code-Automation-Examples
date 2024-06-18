@@ -6,13 +6,30 @@ module ThryveTypes where
 
 import GHC.Generics
 import Data.Aeson              
-import Data.Text               
+import Data.Text    
+import Control.Monad.Trans.Reader
+import Control.Monad.Trans.State.Lazy   
+import qualified Data.Map             as M        
 
+
+-- HTTP RELATED TYPES
+type ContentType          =    [Char]
+type Method               =    [Char]
 
 -- Type Synonyms used in the HTTP REST Flow
 type AccessToken          =    [Char]
 type UploadTimestamp      =    [Char]
 type HealthData           =    [Char]
+
+-- Our General Generation MT Type
+type ThryveRest a  s  r    =    ReaderT r (StateT s IO) a 
+
+-- Our State MT synonym of user data as computations proceed
+type ThryveSession         =    (AccessToken, UploadTimestamp)
+
+-- Our representation of values that do not change
+type ThryveConstants       =    M.Map [Char] [Char]
+
 
 -- Defining a JSON format for a generic health record
 data ThryveHealthData     =    ThryveHealthData {
@@ -33,8 +50,8 @@ data Data                 =     Data             {
                                      valueType                  :: String
                                 }   deriving (Show)
 
--- Making all our custom types into Instances so we can absorb JSON
 
+-- Making all our custom types into Instances so we can absorb JSON
 instance FromJSON ThryveHealthData where
   parseJSON = withObject "ThryveHealthData" $ \obj -> do
     authenticationToken <- obj .: "authenticationToken"

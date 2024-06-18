@@ -29,6 +29,8 @@ dependencies:
 - time
 - text
 - HUnit
+- transformers
+- containers
 
 ghc-options:
 - -Wall
