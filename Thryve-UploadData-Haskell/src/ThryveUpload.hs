@@ -8,14 +8,14 @@ import ThryveUtils
 import ThryveConstants
 
 --External Helper Libraries 
-import            Data.Aeson                     as A
-import            Data.Char                      (chr)
 import            Network.HTTP.Simple
 import            Network.HTTP.Client.Conduit 
 import            Control.Monad.IO.Class
 import            Control.Monad.Trans.Class
 import            Control.Monad.Trans.State.Lazy
-import qualified  Data.ByteString                 as B
+import            Data.Aeson                         as A
+import            Data.Char                          (chr)
+import qualified  Data.ByteString                    as B
 
 
 
@@ -39,18 +39,10 @@ retrieveThryveCloudData = do
 generateThryveUser :: ThryveRest (Maybe ThryveHealthData) ThryveSession ThryveConstants
 generateThryveUser = do
     request' <- parseRequest ("POST "++ checkFor "userCreationUrl")
-    let request
-            = setRequestMethod "POST"
-            $ setRequestHeader "Content-Type"     ["application/x-www-form-urlencoded"]
-            $ setRequestHeader "Authorization"    [authorizationHeader                ]
-            $ setRequestHeader "AppAuthorization" [appAuthorizationHeader             ]
-            $ setRequestSecure True
-            $ setRequestPort 443
-            $ request'
+    let request = formRequest request' "POST" "application/x-www-form-urlencoded" Nothing Nothing
     resp <- liftIO $ httpBS request
     (lift $ put ((map (chr . fromEnum) . B.unpack . getResponseBody $ resp), [])) >> return Nothing
     
-
 
 -- Function that Uploads the Thryve User's Health Data, represented as JSON
 uploadThryveUserData :: ThryveRest (Maybe ThryveHealthData) ThryveSession ThryveConstants
@@ -58,16 +50,7 @@ uploadThryveUserData = do
     (accToken, _) <- lift get 
     liftIO findCurrentTime >>= (\t -> lift $ put (accToken, t)) 
     request'  <- parseRequest ("PUT "++checkFor "uploadDataUrl")
-    let request
-            = setRequestMethod "PUT"
-            $ setRequestHeader "Content-Type"         ["application/json; charset=utf-8"  ]
-            $ setRequestHeader "Authorization"        [authorizationHeader                ]
-            $ setRequestHeader "AppAuthorization"     [appAuthorizationHeader             ]
-            $ setRequestHeader "authenticationToken"  [createByteStream accToken          ]
-            $ setRequestBody (RequestBodyBS . createByteStream $ hData)
-            $ setRequestSecure True
-            $ setRequestPort 443
-            $ request'
+    let request = formRequest request' "PUT" "application/json; charset=utf-8" (Just . createByteStream $ hData) (Just . createByteStream $ accToken)
     httpBS request >>= (\c -> liftIO $ putStrLn ("Response Code After Upload: -> "++(show . getResponseStatusCode $ c))) >> return Nothing
                             
     
@@ -76,15 +59,7 @@ downloadThryveUserData ::  ThryveRest (Maybe ThryveHealthData) ThryveSession Thr
 downloadThryveUserData= do
     (accToken, tstamp) <- lift get 
     request' <- parseRequest ("POST "++checkFor "downloadDataUrl")
-    let request
-            = setRequestMethod "POST"
-            $ setRequestHeader "Content-Type"         ["application/x-www-form-urlencoded"  ]
-            $ setRequestHeader "Authorization"        [authorizationHeader                  ]
-            $ setRequestHeader "AppAuthorization"     [appAuthorizationHeader               ]
-            $ setRequestHeader "authenticationToken"  [createByteStream accToken            ]
-            $ setRequestBody (RequestBodyBS $ createByteStream ("authenticationToken="++accToken++"&createdAfterUnix="++tstamp))
-            $ setRequestSecure True
-            $ setRequestPort 443
-            $ request'
+    let request = formRequest request' "POST" "application/x-www-form-urlencoded"
+                         (Just $ createByteStream ("authenticationToken="++accToken++"&createdAfterUnix="++tstamp)) (Just . createByteStream $ accToken)
     httpBS request >>= (return . A.decode . flick . map (chr . fromEnum) . B.unpack . getResponseBody)
     

@@ -9,6 +9,8 @@ import ThryveConstants
 
 --External imports
 import Data.Maybe
+import Network.HTTP.Simple              
+import Network.HTTP.Client.Conduit     
 import qualified Data.Map as M
 import qualified Data.ByteString         as B
 import qualified Data.ByteString.Char8   as C
@@ -18,6 +20,8 @@ import Data.ByteString.Base64            (encode)
 import Data.Time.Clock.POSIX             (getPOSIXTime)
 
 
+-- Simplifying type signature dealing with forming a request
+type SimpleThryveRequest  =    (Request -> ProtocolMethod -> ContentType -> Maybe ThryveRequestBody -> Maybe HeaderContent -> Request )
 
 --Function that encodes any String into a readable Base64 String
 -- This is needed for authentication credentials when being transmitted inside HTTP headers
@@ -28,7 +32,7 @@ encodeAsBase64          =  map (chr . fromEnum) . B.unpack . encode . C.pack
 createByteStream       :: [Char] -> C.ByteString
 createByteStream        =  C.pack
 
--- Given some key, lookup the corresponding thryve constant value for it
+-- Funtional that will, Given some key, lookup the corresponding thryve constant value for it
 checkFor :: [Char] -> [Char]
 checkFor = fromJust . (flip M.lookup) thryveConstants
 
@@ -45,8 +49,29 @@ appAuthorizationHeader  =  createByteStream ("Basic "++encodeAsBase64 (checkFor 
 findCurrentTime        :: IO UploadTimestamp
 findCurrentTime         = ((round . (* 1000)) <$> getPOSIXTime) >>= (return . show)
                   
--- Remove unwanted first and last square bracket character in the given list of chracters
+-- Function to Remove unwanted first and last square bracket character in the given list of chracters
 flick :: [Char] -> L.ByteString
 flick []      =  ""
 flick xs      =  L.fromStrict . C.pack . tail . init $ xs
 
+--Function that forms the remainder of an HTTP Request
+formRequest :: SimpleThryveRequest
+formRequest r p c _ Nothing  =  let request   = setRequestMethod  p
+                                      $ setRequestHeader "Content-Type"         [ c ]
+                                      $ setRequestHeader "Authorization"        [authorizationHeader    ]
+                                      $ setRequestHeader "AppAuthorization"     [appAuthorizationHeader ]
+                                      $ setRequestSecure True
+                                      $ setRequestPort 443
+                                      $ r in request 
+formRequest r p c (Just b) (Just h)  = let request  = setRequestMethod  p
+                                            $ setRequestHeader "Content-Type"         [ c ]
+                                            $ setRequestHeader "Authorization"        [authorizationHeader    ]
+                                            $ setRequestHeader "AppAuthorization"     [appAuthorizationHeader ]
+                                            $ setRequestHeader "authenticationToken"  [ h ]
+                                            $ setRequestBody (RequestBodyBS b)
+                                            $ setRequestSecure True
+                                            $ setRequestPort 443
+                                            $ r in request
+
+
+          

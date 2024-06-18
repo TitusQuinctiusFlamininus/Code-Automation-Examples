@@ -8,13 +8,16 @@ import GHC.Generics
 import Data.Aeson              
 import Data.Text    
 import Control.Monad.Trans.Reader
-import Control.Monad.Trans.State.Lazy   
-import qualified Data.Map             as M        
-
+import Control.Monad.Trans.State.Lazy 
+import qualified Data.Map                as M    
+import qualified Data.ByteString.Char8   as C
+      
 
 -- HTTP RELATED TYPES
-type ContentType          =    [Char]
-type Method               =    [Char]
+type ContentType          =    C.ByteString
+type ProtocolMethod       =    C.ByteString
+type HeaderContent        =    C.ByteString
+type ThryveRequestBody    =    C.ByteString
 
 -- Type Synonyms used in the HTTP REST Flow
 type AccessToken          =    [Char]

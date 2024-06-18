@@ -28,7 +28,7 @@ test_Uploaded_Values_Matches_Downloaded_Values_Exactly = TestCase (
     do healthData <- (evalStateT (runReaderT retrieveThryveCloudData thryveConstants) ([], [])) :: IO (Maybe ThryveHealthData)
        putStrLn $ "DOWNLOADED USER HEALTH DATA: \n"++show healthData ++ "\n"
        case healthData of 
-        Nothing -> assertFailure "We were meant to get a User Health Record, but instead got not data OR We got partial data!"
+        Nothing -> assertFailure "We were meant to get a User Health Record, but either data was missing or malformed!"
         Just d  -> assertBool "The Uploaded Weight Data Value does not seem to match the Downloaded Cloud Weight Data Value \n" 
                     ((checkFor "testWeight" == (value . head . data' . head . dataSources $ d)) &&
                     (checkFor "testHeight" == (value . head . tail . data' . head . dataSources $ d)))
