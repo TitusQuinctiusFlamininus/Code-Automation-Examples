@@ -23,14 +23,9 @@ import qualified  Data.ByteString                    as B
 -- Entry function to the end-to-end test
 retrieveThryveCloudData :: ThryveRest (Maybe ThryveHealthData) ThryveSession ThryveConstants
 retrieveThryveCloudData = do
-        generateThryveUser
-        k <- lift get
-        liftIO . putStrLn $ "\n Thryve User Created : Access Token for Session : -> "++fst k++"\n "
-        uploadThryveUserData 
-        k' <- lift get
-        liftIO . putStrLn $ "Thryve User Health Data Uploaded at TimeStamp: -> "++snd k'++"\n "
+        generateThryveUser    >> lift get >>= (\k ->  liftIO . putStrLn $ "\n Thryve User Created : Access Token for Session : -> "++fst k++"\n ")     
+        uploadThryveUserData  >> lift get >>= (\k' -> liftIO . putStrLn $ "Thryve User Health Data Uploaded at TimeStamp: -> "++snd k'++"\n ")
         downloadThryveUserData 
-
 
 
 
