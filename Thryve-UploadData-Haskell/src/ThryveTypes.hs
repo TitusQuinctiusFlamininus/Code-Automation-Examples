@@ -14,15 +14,15 @@ import qualified Data.ByteString.Char8   as C
       
 
 -- HTTP RELATED TYPES
-type ContentType          =    C.ByteString
-type ProtocolMethod       =    C.ByteString
-type HeaderContent        =    C.ByteString
-type ThryveRequestBody    =    C.ByteString
+type ContentType           =    C.ByteString
+type ProtocolMethod        =    C.ByteString
+type HeaderContent         =    C.ByteString
+type ThryveRequestBody     =    C.ByteString
 
 -- Type Synonyms used in the HTTP REST Flow
-type AccessToken          =    [Char]
-type UploadTimestamp      =    [Char]
-type HealthData           =    [Char]
+type AccessToken           =    [Char]
+type UploadTimestamp       =    [Char]
+type HealthData            =    [Char]
 
 -- Our General Generation MT Type
 type ThryveRest a  s  r    =    ReaderT r (StateT s IO) a 

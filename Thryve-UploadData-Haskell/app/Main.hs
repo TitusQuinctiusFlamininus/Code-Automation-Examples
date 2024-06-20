@@ -25,7 +25,7 @@ tests = TestList [TestLabel "verifyUserDataMatches" test_Uploaded_Values_Matches
 -- Test the Positive Upload Case
 test_Uploaded_Values_Matches_Downloaded_Values_Exactly :: Test
 test_Uploaded_Values_Matches_Downloaded_Values_Exactly = TestCase (
-    do healthData <- (evalStateT (runReaderT retrieveThryveCloudData thryveConstants) ([], [])) 
+    do healthData <- evalStateT (runReaderT retrieveThryveCloudData thryveConstants) ([], [])
        putStrLn $ "DOWNLOADED USER HEALTH DATA: \n"++show healthData ++ "\n"
        case healthData of 
         Nothing -> assertFailure "We were meant to get a User Health Record, but either data was missing or malformed!"
