@@ -29,7 +29,7 @@ test_Uploaded_Values_Matches_Downloaded_Values_Exactly = TestCase (
        putStrLn $ "DOWNLOADED USER HEALTH DATA: \n"++show healthData ++ "\n"
        case healthData of 
         Nothing -> assertFailure "We were meant to get a User Health Record, but either data was missing or malformed!"
-        Just d  -> assertBool "The Uploaded Weight Data Value does not seem to match the Downloaded Cloud Weight Data Value \n" 
+        Just d  -> assertBool "The Uploaded Weight/Height Data Value does not seem to match the Downloaded Cloud Weight/Height Data Value \n" 
                     ((checkFor "testWeight" == (value . head . data' . head . dataSources $ d)) &&
                     (checkFor "testHeight" == (value . head . tail . data' . head . dataSources $ d)))
        )

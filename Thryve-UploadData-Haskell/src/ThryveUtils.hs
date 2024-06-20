@@ -73,5 +73,3 @@ formRequest r p c (Just b) (Just h)  = let request  = setRequestMethod  p
                                             $ setRequestPort 443
                                             $ r in request
 formRequest r _ _ Nothing (Just _)   = r
-
-          
