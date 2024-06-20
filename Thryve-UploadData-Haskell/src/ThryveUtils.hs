@@ -52,7 +52,7 @@ findCurrentTime         = ((round . (* 1000)) <$> getPOSIXTime) >>= (return . sh
 -- Function to Remove unwanted first and last square bracket character in the given list of chracters
 flick :: [Char] -> L.ByteString
 flick []      =  ""
-flick xs      =  L.fromStrict . C.pack . tail . init $ xs
+flick xs      =  L.fromStrict . createByteStream . tail . init $ xs
 
 --Function that forms the remainder of an HTTP Request
 formRequest :: SimpleThryveRequest
@@ -72,6 +72,6 @@ formRequest r p c (Just b) (Just h)  = let request  = setRequestMethod  p
                                             $ setRequestSecure True
                                             $ setRequestPort 443
                                             $ r in request
-
+formRequest r _ _ Nothing (Just _)   = r
 
           

@@ -9,7 +9,6 @@ import ThryveConstants
 
 --External Helper Libraries 
 import            Network.HTTP.Simple
-import            Network.HTTP.Client.Conduit 
 import            Control.Monad.IO.Class
 import            Control.Monad.Trans.Class
 import            Control.Monad.Trans.State.Lazy
