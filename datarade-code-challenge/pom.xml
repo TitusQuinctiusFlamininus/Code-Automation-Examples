@@ -7,6 +7,80 @@
   <version>1.0-SNAPSHOT</version>
   <name>datarade-code-challenge</name>
   <url>http://maven.apache.org</url>
+  <build>
+    <testSourceDirectory>src/test</testSourceDirectory>
+  <plugins>
+    <plugin>
+      <artifactId>exec-maven-plugin</artifactId>
+      <groupId>org.codehaus.mojo</groupId>
+      <executions>
+        <execution><!-- Run our version calculation script -->
+          <id>login-to-docker-hub</id>
+          <phase>process-resources</phase>
+          <goals>
+            <goal>exec</goal>
+          </goals>
+          <configuration>
+            <executable>/opt/homebrew/bin/docker</executable>
+            <arguments>
+              <argument>login</argument>
+              <argument>-u</argument>
+              <argument>nyix759</argument>
+              <argument>-p</argument>
+              <argument>xHfCQdPlPBgCKHJCjBRN</argument>
+            </arguments>
+          </configuration>
+        </execution>
+        <execution><!-- Run our version calculation script -->
+          <id>pull-the-docker-container</id>
+          <phase>process-resources</phase>
+          <goals>
+            <goal>exec</goal>
+          </goals>
+          <configuration>
+            <executable>/opt/homebrew/bin/docker</executable>
+            <arguments>
+              <argument>pull</argument>
+              <argument>bkimminich/juice-shop</argument>
+            </arguments>
+          </configuration>
+        </execution>
+        <execution><!-- Run our version calculation script -->
+          <id>start-the-docker-container</id>
+          <phase>process-test-resources</phase>
+          <goals>
+            <goal>exec</goal>
+          </goals>
+          <configuration>
+            <executable>/opt/homebrew/bin/docker</executable>
+            <arguments>
+              <argument>run</argument>
+              <argument>--rm</argument>
+              <argument>-p</argument>
+              <argument>3000:3000</argument>
+              <argument>bkimminich/juice-shop</argument>
+            </arguments>
+            <async>true</async>
+          </configuration>
+        </execution>
+        <execution><!-- Run our version calculation script -->
+          <id>stop-the-docker-container</id>
+          <phase>package</phase>
+          <goals>
+            <goal>exec</goal>
+          </goals>
+          <configuration>
+            <executable>/opt/homebrew/bin/docker</executable>
+            <arguments>
+              <argument>stop</argument>
+              <argument>$(/opt/homebrew/bin/docker ps -a -q)</argument>
+            </arguments>
+          </configuration>
+        </execution>
+      </executions>
+    </plugin>
+  </plugins>
+  </build>
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
