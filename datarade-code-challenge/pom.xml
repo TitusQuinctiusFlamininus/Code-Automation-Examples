@@ -45,7 +45,16 @@
             </arguments>
           </configuration>
         </execution>
-
+        <execution><!-- Stop the existing container with the JuiceShop app -->
+          <id>unblock-port-3000</id>
+          <phase>process-resources</phase>
+          <goals>
+            <goal>exec</goal>
+          </goals>
+          <configuration>
+            <executable>remove-port-hog.sh</executable>
+          </configuration>
+        </execution>
         <execution><!-- Start up a container with the JuiceShop app -->
           <id>start-the-docker-container</id>
           <phase>process-test-resources</phase>
