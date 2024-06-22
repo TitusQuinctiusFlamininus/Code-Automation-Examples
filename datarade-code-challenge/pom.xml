@@ -66,7 +66,7 @@
         </execution>
         <execution><!-- Stop the existing container with the JuiceShop app -->
           <id>stop-the-docker-container</id>
-          <phase>package</phase>
+          <phase>post-integration-test</phase>
           <goals>
             <goal>exec</goal>
           </goals>

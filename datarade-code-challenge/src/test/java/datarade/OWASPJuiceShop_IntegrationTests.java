@@ -1,35 +1,34 @@
 package datarade;
 
-import junit.framework.Test;
+
 import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import org.junit.Before;
+import org.junit.Test;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 public class OWASPJuiceShop_IntegrationTests extends TestCase {
 
+    WebDriver driver;
 
     /**
-     * Create the test case
-     *
-     * @param testName name of the test case
+     * Setup of all integration tests.
      */
-    public OWASPJuiceShop_IntegrationTests( String testName )
+    @Before
+    public  void setUp()
     {
-        super( testName );
+        driver = new ChromeDriver();
+        driver.get("http://localhost:3000");
     }
 
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( OWASPJuiceShop_IntegrationTests.class );
-    }
 
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
+    @Test
+    public void check_Pagination_Contains_Different_Items()
     {
+
         assertTrue( true );
     }
 
