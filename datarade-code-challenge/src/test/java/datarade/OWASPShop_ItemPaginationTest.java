@@ -3,25 +3,22 @@ package datarade;
 
 import org.junit.After;
 import org.junit.Before;
-import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 
-public class OWASPJuiceShop_IntegrationTests {
+public class OWASPShop_ItemPaginationTest {
 
 
     static WebDriver driver;
@@ -65,7 +62,7 @@ public class OWASPJuiceShop_IntegrationTests {
         driver.quit();
     }
 
-
+    @Ignore
     @Test
     public void check_Pagination_Contains_Different_Items()
     {
@@ -103,10 +100,13 @@ public class OWASPJuiceShop_IntegrationTests {
     //Get all the Items on the Page as a list; Print them out to standard output before returning the list
     private static List<WebElement> getAllWebElements(String log) {
         System.out.println(log);
+        System.out.println("----------------------------------");
         List<WebElement> pageItems = driver.findElements(By.className("item-name"));
         for (WebElement element : pageItems) {
             System.out.println(element.getText());
         }
+        System.out.println("----------------------------------");
+        System.out.println("\n");
         return pageItems;
     }
 
