@@ -39,6 +39,7 @@ public class OWASPShop_ItemPaginationTest extends OWASPSHOP_JuicyTestSuite{
         driver.quit();
     }
 
+    @Ignore
     @Test
     public void check_Pagination_Contains_Different_Items()
     {

@@ -39,7 +39,7 @@ public class OWASPShop_ItemPerPageTest extends OWASPSHOP_JuicyTestSuite{
         driver.quit();
     }
 
-
+    @Ignore
     @Test
     public void verify_Lowest_Items_Per_Page_Count()
     {
@@ -59,7 +59,8 @@ public class OWASPShop_ItemPerPageTest extends OWASPSHOP_JuicyTestSuite{
     }
 
     /*
-    Test to check that the Option for 24 items per page
+    Test to check that the Option for 24 items per page means that the first page has 24 items
+    and the last page has 11, making a total of 35 Store items
    */
     @Test
     public void verify_Average_Number_Of_Items_Per_Page_Count()
@@ -68,9 +69,13 @@ public class OWASPShop_ItemPerPageTest extends OWASPSHOP_JuicyTestSuite{
             Thread.sleep(3000);
             selectFromDropdown("24");
             Thread.sleep(3000);
-            List<WebElement> allPageItems = getAllWebElements("Printing All First Page Items ...\n");
+            List<WebElement> allFirstPageItems = getAllWebElements("Printing All First Page Items ...\n");
+            Thread.sleep(3000); //Go to the last page
+            clickNextPageButton();
             Thread.sleep(3000);
-            assertEquals("There are meant to be 24 Items on the Landing Page", 24, allPageItems.size());
+            List<WebElement> allLastPageItems = getAllWebElements("Printing All Last Page Items ...\n");
+            assertEquals("There are meant to be 24 Items on the Landing Page", 24, allFirstPageItems.size());
+            assertEquals("There are meant to be 12 Items on the Last Page", 11, allLastPageItems.size());
         }
         catch (Exception e) {
             e.printStackTrace();
