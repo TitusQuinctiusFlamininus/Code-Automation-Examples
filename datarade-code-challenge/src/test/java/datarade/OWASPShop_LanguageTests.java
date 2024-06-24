@@ -12,9 +12,9 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import static datarade.OWASPShop_Enums.Language.FRENCH;
-import static datarade.OWASPShop_Enums.Language.GERMAN;
-import static datarade.OWASPShop_Enums.XPath.HeaderTextPath;
+import static datarade.OWASPShop_Enums.Language.*;
+import static datarade.OWASPShop_Enums.Navigation.HeaderTextPath;
+
 import static org.junit.Assert.*;
 
 public class OWASPShop_LanguageTests extends OWASPShop_TestManager {

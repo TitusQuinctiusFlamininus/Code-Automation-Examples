@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
-import static datarade.OWASPShop_Enums.XPath.*;
+import static datarade.OWASPShop_Enums.Navigation.*;
 
 public class OWASPShop_TestManager {
 
@@ -48,6 +48,12 @@ public class OWASPShop_TestManager {
     protected void clickOnButtonOrLink(String xpathExpression) {
         WebElement mapObject = this.driver.findElement(By.xpath(xpathExpression));
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", mapObject);
+    }
+
+    //Type Text into a WebElement
+    protected void typeTextIntoElement(String xpathExpression, String text) {
+        WebElement mapObject = this.driver.findElement(By.xpath(xpathExpression));
+        mapObject.sendKeys(text);
     }
 
     //Return on text on a WebElement at a specific xpath location
