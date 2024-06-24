@@ -8,12 +8,22 @@ import java.util.List;
 import static org.junit.Assert.assertFalse;
 
 
+/*
+This class represents tests that deal with paging through the various item pages of the
+website. The number of pages to page (or scroll) through will depend on the maximum number
+of items being displayed per page (adjustable at the bottom of the page)
+ */
 public class OWASPShop_ItemPaginationTests extends OWASPShop_TestManager {
 
     public OWASPShop_ItemPaginationTests(){
         super(new ChromeDriver());
     }
 
+    /*
+    Page through the different pages and gather the names of the items on different pages.
+    Then check to see if they are unique across the website. The default language was used (english),
+    although this could have been done with any language.
+    */
     @Test
     public void check_Pagination_Contains_Different_Items()
     {

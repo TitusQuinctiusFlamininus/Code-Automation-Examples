@@ -1,8 +1,15 @@
 package datarade;
 
+/*
+Class holding Enums that are essentially constants used in various tests. Placing them in one location reduces noise in
+the individual tests, making it easier to discern what the test is actually doing. They have been broken down into
+different categories, such as Authentication, SecurityFlaw, General Navigation and Language Enums
+ */
 public class OWASPShop_Enums {
 
-    //Authentication Related Constants
+    /*
+    Authentication Related Constants
+     */
     public enum Authentication {
         LoginMenuButtonName("navbarLoginButton"),
         AccountMenuButtonPath("/html/body/app-root/div/mat-sidenav-container/mat-sidenav-content/app-navbar/mat-toolbar/mat-toolbar-row/button[3]"),
@@ -22,12 +29,14 @@ public class OWASPShop_Enums {
         ;
 
         public final String label;
-        private Authentication(String label) {
+        Authentication(String label) {
             this.label = label;
         }
     }
 
-    //Enums to test any Security Flaws the system may have
+    /*
+    Enums to test any Security Flaws the system may have
+     */
     public enum SecurityFlaw {
         NotCustomerYetLinkPath("/html/body/app-root/div/mat-sidenav-container/mat-sidenav-content/app-login/div/mat-card/div/div[2]/a"),
         RegisterEmailTextFieldPath("/html/body/app-root/div/mat-sidenav-container/mat-sidenav-content/app-register/div/mat-card/div[2]/mat-form-field[1]/div/div[1]/div[3]/input"),
@@ -38,13 +47,14 @@ public class OWASPShop_Enums {
         RegistrationButtonPath("/html/body/app-root/div/mat-sidenav-container/mat-sidenav-content/app-register/div/mat-card/div[2]/button");
 
         public final String label;
-
-        private SecurityFlaw(String label) {
+        SecurityFlaw(String label) {
             this.label = label;
         }
         }
 
-    //General Paths in the XPath hierarchy HTML DOM to specific elements
+    /*
+    General Paths in the XPath hierarchy HTML DOM to specific elements
+     */
     public enum Navigation {
         HeaderTextPath("/html/body/app-root/div/mat-sidenav-container/mat-sidenav-content/app-search-result/div/div/div[1]/div[1]"),
         BottomPopupButtonPath("/html/body/div[1]/div/a"),
@@ -53,18 +63,20 @@ public class OWASPShop_Enums {
         NextPageNavigationButtonPath("/html/body/app-root/div/mat-sidenav-container/mat-sidenav-content/app-search-result/div/div/mat-paginator/div/div/div[2]/button[2]");
 
         public final String label;
-        private Navigation(String label) {
+        Navigation(String label) {
             this.label = label;
         }
     }
 
-    //Language Codes Constants
+    /*
+       Language Codes Constants
+     */
     public enum Language {
         GERMAN("6"),
         FRENCH("10");
 
         public final String label;
-        private Language(String label) {
+        Language(String label) {
             this.label = label;
         }
     }

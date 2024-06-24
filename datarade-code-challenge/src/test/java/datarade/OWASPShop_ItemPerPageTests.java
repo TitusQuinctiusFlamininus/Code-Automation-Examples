@@ -35,7 +35,7 @@ public class OWASPShop_ItemPerPageTests extends OWASPShop_TestManager {
             Thread.sleep(3000);
             assertEquals("There are meant to be 12 Items on the Landing Page", 12, firstPageItems.size());
             assertEquals("There are meant to be 12 Items on the Second Page", 12, secondPageItems.size());
-            assertEquals("There are meant to be 12 Items on the Last Page", 11, lastPageItems.size());
+            assertEquals("There are meant to be 11 Items on the Last Page", 11, lastPageItems.size());
         }
         catch (Exception e) {
             e.printStackTrace();
@@ -64,7 +64,7 @@ public class OWASPShop_ItemPerPageTests extends OWASPShop_TestManager {
             Thread.sleep(3000);
             List<WebElement> allLastPageItems = getAllWebElements("Printing All Last Page Items ...\n");
             assertEquals("There are meant to be 24 Items on the Landing Page", 24, allFirstPageItems.size());
-            assertEquals("There are meant to be 12 Items on the Last Page", 11, allLastPageItems.size());
+            assertEquals("There are meant to be 11 Items on the Last Page", 11, allLastPageItems.size());
         }
         catch (Exception e) {
             e.printStackTrace();
