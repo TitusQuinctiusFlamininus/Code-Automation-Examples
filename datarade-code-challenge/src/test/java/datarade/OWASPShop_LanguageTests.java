@@ -12,6 +12,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import static datarade.OWASPShop_Enums.Language.FRENCH;
+import static datarade.OWASPShop_Enums.Language.GERMAN;
 import static datarade.OWASPShop_Enums.XPath.HeaderTextPath;
 import static org.junit.Assert.*;
 
@@ -72,13 +74,13 @@ public class OWASPShop_LanguageTests extends OWASPShop_TestManager {
             //Default language is english, so let's just get the english item labels immediately
             List<WebElement> englishLanguageItems = getAllWebElements("Printing First Page Items (In English)...\n");
             Thread.sleep(3000);
-            selectLanguageOfChoice("6"); // german language choice
+            selectLanguageOfChoice(GERMAN.label); // german language choice
             Thread.sleep(3000);
             driver.navigate().refresh(); //reload the page to make item labels appear in german
             Thread.sleep(3000);
             List<WebElement> germanLanguageItems = getAllWebElements("Printing First Page Items (in German)...\n");
             Thread.sleep(3000);
-            selectLanguageOfChoice("10"); // french language choice
+            selectLanguageOfChoice(FRENCH.label); // french language choice
             Thread.sleep(3000);
             driver.navigate().refresh(); //reload the page to make item labels appear in french
             Thread.sleep(3000);

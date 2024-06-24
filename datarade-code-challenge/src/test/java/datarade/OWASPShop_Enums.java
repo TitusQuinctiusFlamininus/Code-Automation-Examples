@@ -16,4 +16,15 @@ public class OWASPShop_Enums {
         }
     }
 
+    //Language Codes Constants
+    public enum Language {
+        GERMAN("6"),
+        FRENCH("10");
+
+        public final String label;
+        private Language(String label) {
+            this.label = label;
+        }
+    }
+
 }
