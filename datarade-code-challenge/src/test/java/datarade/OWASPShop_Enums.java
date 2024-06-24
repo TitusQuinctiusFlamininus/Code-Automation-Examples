@@ -27,6 +27,23 @@ public class OWASPShop_Enums {
         }
     }
 
+    //Enums to test any Security Flaws the system may have
+    public enum SecurityFlaw {
+        NotCustomerYetLinkPath("/html/body/app-root/div/mat-sidenav-container/mat-sidenav-content/app-login/div/mat-card/div/div[2]/a"),
+        RegisterEmailTextFieldPath("/html/body/app-root/div/mat-sidenav-container/mat-sidenav-content/app-register/div/mat-card/div[2]/mat-form-field[1]/div/div[1]/div[3]/input"),
+        RegisterPasswordTextFieldPath("/html/body/app-root/div/mat-sidenav-container/mat-sidenav-content/app-register/div/mat-card/div[2]/mat-form-field[2]/div/div[1]/div[3]/input"),
+        RepeatPasswordTextFieldPath("/html/body/app-root/div/mat-sidenav-container/mat-sidenav-content/app-register/div/mat-card/div[2]/mat-form-field[3]/div/div[1]/div[3]/input"),
+        SecurityQuestionSelectPath("/html/body/app-root/div/mat-sidenav-container/mat-sidenav-content/app-register/div/mat-card/div[2]/div[1]/mat-form-field[1]/div/div[1]/div[3]/mat-select"),
+        SecurityAnswerTextFieldPath("/html/body/app-root/div/mat-sidenav-container/mat-sidenav-content/app-register/div/mat-card/div[2]/div[1]/mat-form-field[2]/div/div[1]/div[3]/input"),
+        RegistrationButtonPath("/html/body/app-root/div/mat-sidenav-container/mat-sidenav-content/app-register/div/mat-card/div[2]/button");
+
+        public final String label;
+
+        private SecurityFlaw(String label) {
+            this.label = label;
+        }
+        }
+
     //General Paths in the XPath hierarchy HTML DOM to specific elements
     public enum Navigation {
         HeaderTextPath("/html/body/app-root/div/mat-sidenav-container/mat-sidenav-content/app-search-result/div/div/div[1]/div[1]"),

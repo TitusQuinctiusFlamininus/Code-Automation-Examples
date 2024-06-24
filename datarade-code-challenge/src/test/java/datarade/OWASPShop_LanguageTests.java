@@ -1,20 +1,14 @@
 package datarade;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-
 import static datarade.OWASPShop_Enums.Language.*;
 import static datarade.OWASPShop_Enums.Navigation.HeaderTextPath;
-
 import static org.junit.Assert.*;
 
 public class OWASPShop_LanguageTests extends OWASPShop_TestManager {

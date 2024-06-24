@@ -7,10 +7,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-
 import java.util.List;
-
 import static datarade.OWASPShop_Enums.Navigation.*;
+import static datarade.OWASPShop_Enums.SecurityFlaw.SecurityQuestionSelectPath;
 
 public class OWASPShop_TestManager {
 
@@ -97,7 +96,12 @@ public class OWASPShop_TestManager {
         clickOnButtonOrLink(LanguageMenuButtonPath.label);
         Thread.sleep(3000);
         driver.findElement(By.id("mat-radio-"+selection)).click();
+    }
 
+    protected  void selectFromSecurityQuestion(String selection) throws InterruptedException {
+        clickOnButtonOrLink(SecurityQuestionSelectPath.label);
+        Thread.sleep(3000);
+        driver.findElement(By.id("mat-option-"+selection)).click();
     }
 
     //Click the Next-Page Button at the bottom in order to scroll to the next page and display new items
