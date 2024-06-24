@@ -6,13 +6,13 @@ import org.junit.Ignore;
 import org.junit.Test;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import sun.jvm.hotspot.utilities.Assert;
 
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import static datarade.OWASPShop_Enums.XPath.HeaderTextPath;
 import static org.junit.Assert.*;
 
 public class OWASPShop_LanguageTests extends OWASPShop_TestManager {
@@ -40,7 +40,7 @@ public class OWASPShop_LanguageTests extends OWASPShop_TestManager {
 
 
     @Test
-    public void verify_page_title_language_change_for_each_language_change() throws InterruptedException {
+    public void verify_page_title_language_change_for_first_16_language_change() throws InterruptedException {
         headerTextList = new HashSet<String>();
         //Cycle through the languages, changing them in turn and gathering the header texts in different languages
         for(int langIndex=1; langIndex < 17; langIndex++){
@@ -48,7 +48,7 @@ public class OWASPShop_LanguageTests extends OWASPShop_TestManager {
             Thread.sleep(2000);
             driver.navigate().refresh(); //reload the page
             Thread.sleep(2000);
-            String headerText = findTextAtXPath("/html/body/app-root/div/mat-sidenav-container/mat-sidenav-content/app-search-result/div/div/div[1]/div[1]");
+            String headerText = findTextAtXPath(HeaderTextPath.label);
             System.out.println("Header :> "+headerText);
             getHeaderTextList().add(headerText);
             Thread.sleep(2000);
@@ -64,7 +64,7 @@ public class OWASPShop_LanguageTests extends OWASPShop_TestManager {
     in the list of another (since they would presumably be translated into the
     respective language)
      */
-    @Ignore
+
     @Test
     public void verify_English_German_Or_French_ItemsLabels_Do_Not_Appear_In_Each_Others_Lists()
     {

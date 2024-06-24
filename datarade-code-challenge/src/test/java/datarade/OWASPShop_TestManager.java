@@ -8,6 +8,8 @@ import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
+import static datarade.OWASPShop_Enums.XPath.*;
+
 public class OWASPShop_TestManager {
 
      WebDriver driver;
@@ -55,12 +57,12 @@ public class OWASPShop_TestManager {
 
     //Try and dismiss the smaller popup at the bottom of the screen
     protected  void clickDimissButton(){
-        clickOnButtonOrLink("/html/body/div[1]/div/a");
+        clickOnButtonOrLink(BottomPopupButtonPath.label);
     }
 
     //Try and dismiss the welcome popup on the main page
     protected  void clickDismissJuiceShopWelcome(){
-        clickOnButtonOrLink("//*[@id=\"mat-dialog-0\"]/app-welcome-banner/div/div[2]/button[2]");
+        clickOnButtonOrLink(WelcomePopupButtonPath.label);
     }
 
     protected  void selectNumberOfItemsPerPage(String selection) {
@@ -69,7 +71,7 @@ public class OWASPShop_TestManager {
     }
 
     protected  void selectLanguageOfChoice(String selection) throws InterruptedException {
-        clickOnButtonOrLink("/html/body/app-root/div/mat-sidenav-container/mat-sidenav-content/app-navbar/mat-toolbar/mat-toolbar-row/button[4]");
+        clickOnButtonOrLink(LanguageMenuButtonPath.label);
         Thread.sleep(3000);
         driver.findElement(By.id("mat-radio-"+selection)).click();
 
@@ -77,7 +79,7 @@ public class OWASPShop_TestManager {
 
     //Click the Next-Page Button at the bottom in order to scroll to the next page and display new items
     protected void clickNextPageButton() {
-        clickOnButtonOrLink("/html/body/app-root/div/mat-sidenav-container/mat-sidenav-content/app-search-result/div/div/mat-paginator/div/div/div[2]/button[2]");
+        clickOnButtonOrLink(NextPageNavigationButtonPath.label);
     }
 
     //Get all the Items on the Page as a list; Print them out to standard output before returning the list
