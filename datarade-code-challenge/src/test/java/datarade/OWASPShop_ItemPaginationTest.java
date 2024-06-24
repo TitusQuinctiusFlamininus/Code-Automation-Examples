@@ -5,9 +5,6 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -15,10 +12,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
 
 
-public class OWASPShop_ItemPaginationTest extends OWASPSHOP_JuicyTestSuite{
+public class OWASPShop_ItemPaginationTest extends OWASPShop_TestManager {
 
     public OWASPShop_ItemPaginationTest(){
         super(new ChromeDriver());

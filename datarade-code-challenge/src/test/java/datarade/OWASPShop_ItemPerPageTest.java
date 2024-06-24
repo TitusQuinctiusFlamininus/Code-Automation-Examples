@@ -4,19 +4,14 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.Select;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.Assert.*;
 
-public class OWASPShop_ItemPerPageTest extends OWASPSHOP_JuicyTestSuite{
+public class OWASPShop_ItemPerPageTest extends OWASPShop_TestManager {
 
     //static WebDriver driver;
 
@@ -106,7 +101,7 @@ public class OWASPShop_ItemPerPageTest extends OWASPSHOP_JuicyTestSuite{
   and the last page has 11, making a total of 35 Store items
  */
 
-    @Ignore
+    //@Ignore
     @Test
     public void verify_Highest_Number_Of_Items_Per_Page_Count_Correct_Count_On_Every_Page()
     {

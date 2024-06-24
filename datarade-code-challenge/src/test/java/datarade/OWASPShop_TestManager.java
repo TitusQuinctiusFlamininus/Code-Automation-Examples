@@ -1,18 +1,18 @@
 package datarade;
 
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.List;
 
-public class OWASPSHOP_JuicyTestSuite {
+public class OWASPShop_TestManager {
 
      WebDriver driver;
 
-    public OWASPSHOP_JuicyTestSuite( WebDriver driver){
+    public OWASPShop_TestManager(WebDriver driver){
         this.driver = driver;
     }
 
