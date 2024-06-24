@@ -20,22 +20,6 @@ public class OWASPShop_ItemPaginationTests extends OWASPShop_TestManager {
         super(new ChromeDriver());
     }
 
-    /**
-     * Setup of all integration tests.
-     */
-    @Before
-    public  void setUp()
-    {
-        setupTheTest();
-    }
-
-    @After
-    public void cleanUp()
-    {
-        driver.quit();
-    }
-
-
     @Test
     public void check_Pagination_Contains_Different_Items()
     {

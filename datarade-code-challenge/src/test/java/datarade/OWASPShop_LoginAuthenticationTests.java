@@ -22,22 +22,6 @@ public class OWASPShop_LoginAuthenticationTests extends OWASPShop_TestManager {
         super(new ChromeDriver());
     }
 
-    /**
-     * Setup of all integration tests.
-     */
-    @Before
-    public  void setUp()
-    {
-        setupTheTest();
-    }
-
-    @After
-    public void cleanUp()
-    {
-        driver.quit();
-    }
-
-
     @Test
     public void verify_Invalid_Username_Password_Combination_Fails() throws InterruptedException {
         System.out.println("Attempting to Login with an Invalid Set of Credentials...");

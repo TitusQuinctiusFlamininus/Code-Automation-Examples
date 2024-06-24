@@ -25,22 +25,6 @@ public class OWASPShop_LanguageTests extends OWASPShop_TestManager {
         super(new ChromeDriver());
     }
 
-    /**
-     * Setup of all integration tests.
-     */
-    @Before
-    public  void setUp()
-    {
-        setupTheTest();
-    }
-
-    @After
-    public void cleanUp()
-    {
-        driver.quit();
-    }
-
-
     @Test
     public void verify_page_title_language_change_for_first_16_language_change() throws InterruptedException {
         headerTextList = new HashSet<String>();

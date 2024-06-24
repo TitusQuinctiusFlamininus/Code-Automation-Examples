@@ -1,6 +1,8 @@
 package datarade;
 
 
+import org.junit.After;
+import org.junit.Before;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -16,6 +18,21 @@ public class OWASPShop_TestManager {
 
     public OWASPShop_TestManager(WebDriver driver){
         this.driver = driver;
+    }
+
+    /**
+     * Setup of all integration tests.
+     */
+    @Before
+    public  void setUp()
+    {
+        setupTheTest();
+    }
+
+    @After
+    public void cleanUp()
+    {
+        driver.quit();
     }
 
     //SETUP

@@ -17,21 +17,6 @@ public class OWASPShop_ItemPerPageTests extends OWASPShop_TestManager {
         super(new ChromeDriver());
     }
 
-    /**
-     * Setup of all integration tests.
-     */
-    @Before
-    public  void setUp()
-    {
-        setupTheTest();
-    }
-
-    @After
-    public void cleanUp()
-    {
-        driver.quit();
-    }
-
     /*
    Test to check that the Option for 12 items per page means that the first page has 12 items,
    the second page also has 12 and the last page has 11 items
