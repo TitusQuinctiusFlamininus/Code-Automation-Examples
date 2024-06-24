@@ -35,7 +35,6 @@ public class OWASPShop_TestManager {
                 Thread.sleep(3000);
                 clickDismissJuiceShopWelcome();
                 Thread.sleep(3000);
-                Thread.sleep(3000);
             }
             catch (Exception e) {
                 e.printStackTrace();
@@ -47,6 +46,11 @@ public class OWASPShop_TestManager {
     protected void clickOnButtonOrLink(String xpathExpression) {
         WebElement mapObject = this.driver.findElement(By.xpath(xpathExpression));
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", mapObject);
+    }
+
+    //Return on text on a WebElement at a specific xpath location
+    protected String findTextAtXPath(String xpathExpression) {
+        return this.driver.findElement(By.xpath(xpathExpression)).getText();
     }
 
     //Try and dismiss the smaller popup at the bottom of the screen
@@ -67,7 +71,7 @@ public class OWASPShop_TestManager {
     protected  void selectLanguageOfChoice(String selection) throws InterruptedException {
         clickOnButtonOrLink("/html/body/app-root/div/mat-sidenav-container/mat-sidenav-content/app-navbar/mat-toolbar/mat-toolbar-row/button[4]");
         Thread.sleep(3000);
-        driver.findElement(By.id(selection)).click();
+        driver.findElement(By.id("mat-radio-"+selection)).click();
 
     }
 
