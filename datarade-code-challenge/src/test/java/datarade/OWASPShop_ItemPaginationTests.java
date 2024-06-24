@@ -14,9 +14,9 @@ import java.util.List;
 import static org.junit.Assert.assertFalse;
 
 
-public class OWASPShop_ItemPaginationTest extends OWASPShop_TestManager {
+public class OWASPShop_ItemPaginationTests extends OWASPShop_TestManager {
 
-    public OWASPShop_ItemPaginationTest(){
+    public OWASPShop_ItemPaginationTests(){
         super(new ChromeDriver());
     }
 

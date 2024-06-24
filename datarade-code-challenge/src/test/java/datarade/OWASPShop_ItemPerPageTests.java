@@ -11,11 +11,9 @@ import java.util.List;
 
 import static org.junit.Assert.*;
 
-public class OWASPShop_ItemPerPageTest extends OWASPShop_TestManager {
+public class OWASPShop_ItemPerPageTests extends OWASPShop_TestManager {
 
-    //static WebDriver driver;
-
-    public OWASPShop_ItemPerPageTest(){
+    public OWASPShop_ItemPerPageTests(){
         super(new ChromeDriver());
     }
 
@@ -77,7 +75,7 @@ public class OWASPShop_ItemPerPageTest extends OWASPShop_TestManager {
     {
         try {
             Thread.sleep(3000);
-            selectFromDropdown("24");
+            selectNumberOfItemsPerPage("24");
             Thread.sleep(3000);
             List<WebElement> allFirstPageItems = getAllWebElements("Printing All First Page Items ...\n");
             Thread.sleep(3000);
@@ -101,13 +99,13 @@ public class OWASPShop_ItemPerPageTest extends OWASPShop_TestManager {
   and the last page has 11, making a total of 35 Store items
  */
 
-    //@Ignore
+    @Ignore
     @Test
     public void verify_Highest_Number_Of_Items_Per_Page_Count_Correct_Count_On_Every_Page()
     {
         try {
             Thread.sleep(3000);
-            selectFromDropdown("36");
+            selectNumberOfItemsPerPage("36");
             Thread.sleep(3000);
             List<WebElement> allPageItems = getAllWebElements("Printing All Landing Page Items ...\n");
             Thread.sleep(3000);

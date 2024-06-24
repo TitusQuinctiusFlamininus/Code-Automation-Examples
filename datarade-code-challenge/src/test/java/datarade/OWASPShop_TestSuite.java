@@ -4,6 +4,9 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
 @RunWith(Suite.class)
-@Suite.SuiteClasses({OWASPShop_ItemPaginationTest.class, OWASPShop_ItemPerPageTest.class})
+@Suite.SuiteClasses({OWASPShop_ItemPaginationTests.class,
+                     OWASPShop_ItemPerPageTests.class,
+                     OWASPShop_LanguageTests.class
+                    })
 public class OWASPShop_TestSuite {
 }

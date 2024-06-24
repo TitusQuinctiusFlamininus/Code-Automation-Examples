@@ -35,6 +35,7 @@ public class OWASPShop_TestManager {
                 Thread.sleep(3000);
                 clickDismissJuiceShopWelcome();
                 Thread.sleep(3000);
+                Thread.sleep(3000);
             }
             catch (Exception e) {
                 e.printStackTrace();
@@ -58,9 +59,16 @@ public class OWASPShop_TestManager {
         clickOnButtonOrLink("//*[@id=\"mat-dialog-0\"]/app-welcome-banner/div/div[2]/button[2]");
     }
 
-    protected  void selectFromDropdown(String selection) {
+    protected  void selectNumberOfItemsPerPage(String selection) {
         driver.findElement(By.id("mat-select-0")).click();
         driver.findElement(By.xpath("//span[contains(text(),'"+selection+"')]")).click();
+    }
+
+    protected  void selectLanguageOfChoice(String selection) throws InterruptedException {
+        clickOnButtonOrLink("/html/body/app-root/div/mat-sidenav-container/mat-sidenav-content/app-navbar/mat-toolbar/mat-toolbar-row/button[4]");
+        Thread.sleep(3000);
+        driver.findElement(By.id(selection)).click();
+
     }
 
     //Click the Next-Page Button at the bottom in order to scroll to the next page and display new items
