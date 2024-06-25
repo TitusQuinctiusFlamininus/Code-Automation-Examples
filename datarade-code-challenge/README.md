@@ -8,6 +8,7 @@
 #### Author:    Ngumbah Michael Nyika
 #### Language:  Java
 #### Date:      June 2024
+------------------------------------------
 
 
 ### HOW TO RUN THE OWASP CODING CHALLENGE
