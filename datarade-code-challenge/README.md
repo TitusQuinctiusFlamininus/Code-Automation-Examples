@@ -48,6 +48,15 @@ This command will run all the tests in the OWASP Datarade TestSuite
 
 
 
+### RUNNING TESTS (Some Screenshots)
+------------------------------------------
+
+![](https://github.com/TitusQuinctiusFlamininus/InterviewCode/blob/main/datarade-code-challenge/screenshots/challenge_ss_5.png)
+
+![](https://github.com/TitusQuinctiusFlamininus/InterviewCode/blob/main/datarade-code-challenge/screenshots/challenge_ss_9.png)
+
+![](https://github.com/TitusQuinctiusFlamininus/InterviewCode/blob/main/datarade-code-challenge/screenshots/challenge_ss_3.png)
+
 
 -----------------------------------------------------------------------------------------------------------
 
