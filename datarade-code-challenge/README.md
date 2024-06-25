@@ -64,10 +64,11 @@ https://github.com/TitusQuinctiusFlamininus/InterviewCode.git
 **chmod +x stop-container.sh**
 
 
-6. **Run all the Tests** by running the command: 
+7. **Run all the Tests** by running the command: 
 
-6.1 First, start up the Docker Daemon by starting the Docker Desktop App
-6.2. Run maven: 
+7.1 First, start up the Docker Daemon by starting the Docker Desktop App
+
+7.2. Run maven: 
 
 **mvn clean package**
 
