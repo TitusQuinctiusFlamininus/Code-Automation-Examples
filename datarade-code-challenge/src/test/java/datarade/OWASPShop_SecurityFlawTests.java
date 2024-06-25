@@ -43,13 +43,14 @@ public class OWASPShop_SecurityFlawTests extends OWASPShop_TestManager {
         Thread.sleep(3000);
         typeTextIntoElement(SecurityAnswerTextFieldPath.label, "My-Dads-Name");
         Thread.sleep(3000);
-        clickOnButtonOrLink("/html/body/app-root/div/mat-sidenav-container/mat-sidenav-content/app-register/div/mat-card/div[2]/button");
+        clickOnButtonOrLink(RegistrationButtonPath.label);
         Thread.sleep(3000);
-        String badRegistrationMessage =  findTextAtXPath("/html/body/app-root/div/mat-sidenav-container/mat-sidenav-content/app-challenge-solved-notification/div/mat-card/div[1]");
-        assertEquals("THIS TEST SHOULD HAVE FAILED (but is passing for convenience's sake). Registration Should Have FAILED SINCE PASSWORDS DO NOT MATCH!!!",
+        String badRegistrationMessage =  findTextAtXPath(FalseFlagRegistrationMsgPath.label);
+        assertEquals("",
                 "You successfully solved a challenge: Repetitive Registration (Follow the DRY principle while registering a user.)\n" +
                         "X",
                 badRegistrationMessage);
+        System.out.println("THIS TEST SHOULD HAVE FAILED (but is passing for convenience's sake). Registration Should Have FAILED SINCE PASSWORDS DO NOT MATCH!!!");
     }
 
 

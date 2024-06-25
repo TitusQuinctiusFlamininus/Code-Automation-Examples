@@ -44,7 +44,8 @@ public class OWASPShop_Enums {
         RepeatPasswordTextFieldPath("/html/body/app-root/div/mat-sidenav-container/mat-sidenav-content/app-register/div/mat-card/div[2]/mat-form-field[3]/div/div[1]/div[3]/input"),
         SecurityQuestionSelectPath("/html/body/app-root/div/mat-sidenav-container/mat-sidenav-content/app-register/div/mat-card/div[2]/div[1]/mat-form-field[1]/div/div[1]/div[3]/mat-select"),
         SecurityAnswerTextFieldPath("/html/body/app-root/div/mat-sidenav-container/mat-sidenav-content/app-register/div/mat-card/div[2]/div[1]/mat-form-field[2]/div/div[1]/div[3]/input"),
-        RegistrationButtonPath("/html/body/app-root/div/mat-sidenav-container/mat-sidenav-content/app-register/div/mat-card/div[2]/button");
+        RegistrationButtonPath("/html/body/app-root/div/mat-sidenav-container/mat-sidenav-content/app-register/div/mat-card/div[2]/button"),
+        FalseFlagRegistrationMsgPath("/html/body/app-root/div/mat-sidenav-container/mat-sidenav-content/app-challenge-solved-notification/div/mat-card/div[1]");
 
         public final String label;
         SecurityFlaw(String label) {
