@@ -16,7 +16,6 @@ public class OWASPShop_ItemPerPageTests extends OWASPShop_TestManager {
    Test to check that the Option for 12 items per page means that the first page has 12 items,
    the second page also has 12 and the last page has 11 items
   */
-
     @Test
     public void verify_Lowest_Items_Per_Page_Count_Correct_On_Every_Page() throws InterruptedException {
             List<WebElement> firstPageItems = getAllWebElements("Printing First Page Items ...\n");
@@ -38,7 +37,6 @@ public class OWASPShop_ItemPerPageTests extends OWASPShop_TestManager {
     Test to check that the Option for 24 items per page means that the first page has 24 items
     and the last page has 11, making a total of 35 Store items
    */
-
     @Test
     public void verify_Average_Number_Of_Items_Per_Page_Count_Correct_Count_On_Every_Page() throws InterruptedException {
             selectNumberOfItemsPerPage("24");
@@ -56,7 +54,6 @@ public class OWASPShop_ItemPerPageTests extends OWASPShop_TestManager {
   Test to check that the Option for 24 items per page means that the first page has 24 items
   and the last page has 11, making a total of 35 Store items
  */
-
     @Test
     public void verify_Highest_Number_Of_Items_Per_Page_Count_Correct_Count_On_Every_Page() throws InterruptedException {
             selectNumberOfItemsPerPage("36");

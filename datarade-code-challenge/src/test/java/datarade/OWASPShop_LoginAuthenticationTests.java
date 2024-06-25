@@ -17,6 +17,10 @@ public class OWASPShop_LoginAuthenticationTests extends OWASPShop_TestManager {
         super(new ChromeDriver());
     }
 
+    /*
+    An Invalid Username and Password Credential Combination should produce an
+    Error message on the webpage
+     */
     @Test
     public void verify_Invalid_Username_Password_Combination_Fails() throws InterruptedException {
         System.out.println("Attempting to Login with an Invalid Set of Credentials...");
@@ -36,6 +40,10 @@ public class OWASPShop_LoginAuthenticationTests extends OWASPShop_TestManager {
         assertEquals("Invalid email or password.", findTextAtXPath(AuthAttemptMessagePath.label));
     }
 
+    /*
+    A valid Username and Password Credential combination should succeed, with a
+    proper message
+     */
     @Test
     public void verify_Valid_Username_Password_Combination_Succeeds() throws InterruptedException {
         System.out.println("Attempting to Login with a Valid Set of Credentials...");

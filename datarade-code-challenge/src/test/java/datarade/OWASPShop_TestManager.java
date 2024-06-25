@@ -34,7 +34,9 @@ public class OWASPShop_TestManager {
         driver.quit();
     }
 
-    //SETUP
+    /* SETUP FOR ALL TESTS. It is run before any specific test
+      specified in the child classes
+     */
     protected void setupTheTest() {
         driver.manage().deleteAllCookies();
 
@@ -87,17 +89,20 @@ public class OWASPShop_TestManager {
         clickOnButtonOrLink(WelcomePopupButtonPath.label);
     }
 
+    //Choose the maximum number of items the page is meant to display at any one time
     protected  void selectNumberOfItemsPerPage(String selection) {
         driver.findElement(By.id("mat-select-0")).click();
         driver.findElement(By.xpath("//span[contains(text(),'"+selection+"')]")).click();
     }
 
+    //Choose the language the page should be rendered in
     protected  void selectLanguageOfChoice(String selection) throws InterruptedException {
         clickOnButtonOrLink(LanguageMenuButtonPath.label);
         Thread.sleep(3000);
         driver.findElement(By.id("mat-radio-"+selection)).click();
     }
 
+    //Choose which security question we would like to remember to use when we forget our account info
     protected  void selectFromSecurityQuestion(String selection) throws InterruptedException {
         clickOnButtonOrLink(SecurityQuestionSelectPath.label);
         Thread.sleep(3000);

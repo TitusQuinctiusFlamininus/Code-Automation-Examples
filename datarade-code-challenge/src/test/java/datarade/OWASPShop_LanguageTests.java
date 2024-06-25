@@ -19,6 +19,10 @@ public class OWASPShop_LanguageTests extends OWASPShop_TestManager {
         super(new ChromeDriver());
     }
 
+    /*
+    Change the Language 5 times, capture the title language text changes, make sure
+    they are different from one another
+     */
     @Test
     public void verify_page_title_language_change_for_first_5_language_change() throws InterruptedException {
         headerTextList = new HashSet<String>();
@@ -44,7 +48,6 @@ public class OWASPShop_LanguageTests extends OWASPShop_TestManager {
     in the list of another (since they would presumably be translated into the
     respective language)
      */
-
     @Test
     public void verify_English_German_Or_French_ItemsLabels_Do_Not_Appear_In_Each_Others_Lists() throws InterruptedException {
             //Default language is english, so let's just get the english item labels immediately
