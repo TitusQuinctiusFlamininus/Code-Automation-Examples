@@ -52,8 +52,8 @@ public class OWASPShop_LoginAuthenticationTests extends OWASPShop_TestManager {
         clickOnButtonOrLink(LoginPageButtonPath.label);
         Thread.sleep(3000);
         System.out.println("Login Should have Succeeded!");
-        assertEquals("Initial Success Message does not match up!", SuccessLoginMessage_1.label, findTextAtXPath(SuccessLoginMessage_1_Path.label));
-        assertEquals("Second Success Message does not match up!", SuccessLoginMessage_2.label, findTextAtXPath(SuccessLoginMessage_2_Path.label));
+        assertEquals("Initial Success Message does not match up!", LoginMessage_1.label, findTextAtXPath(LoginMessage_1_Path.label));
+        assertEquals("Second Success Message does not match up!", LoginMessage_2.label, findTextAtXPath(LoginMessage_2_Path.label));
     }
 
 }

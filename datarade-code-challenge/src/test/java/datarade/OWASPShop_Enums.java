@@ -20,11 +20,11 @@ public class OWASPShop_Enums {
         ValidUsername("admin@juice-sh.op"),
         ValidPassword("admin123"),
         LogoutButtonPath("/html/body/div[4]/div[2]/div/div/div/button[4]"),
-        SuccessLoginMessage_1_Path("/html/body/app-root/div/mat-sidenav-container/mat-sidenav-content/app-challenge-solved-notification/div/mat-card[1]/div[1]"),
-        SuccessLoginMessage_2_Path("/html/body/app-root/div/mat-sidenav-container/mat-sidenav-content/app-challenge-solved-notification/div/mat-card[2]/div[1]"),
-        SuccessLoginMessage_1("You successfully solved a challenge: Password Strength (Log in with the administrator's user credentials without previously changing them or applying SQL Injection.)\n" +
+        LoginMessage_1_Path("/html/body/app-root/div/mat-sidenav-container/mat-sidenav-content/app-challenge-solved-notification/div/mat-card[1]/div[1]"),
+        LoginMessage_2_Path("/html/body/app-root/div/mat-sidenav-container/mat-sidenav-content/app-challenge-solved-notification/div/mat-card[2]/div[1]"),
+        LoginMessage_1("You successfully solved a challenge: Password Strength (Log in with the administrator's user credentials without previously changing them or applying SQL Injection.)\n" +
                 "X"),
-        SuccessLoginMessage_2("You successfully solved a challenge: Login Admin (Log in with the administrator's user account.)\n" +
+        LoginMessage_2("You successfully solved a challenge: Login Admin (Log in with the administrator's user account.)\n" +
                 "X");
         ;
 
@@ -45,7 +45,9 @@ public class OWASPShop_Enums {
         SecurityQuestionSelectPath("/html/body/app-root/div/mat-sidenav-container/mat-sidenav-content/app-register/div/mat-card/div[2]/div[1]/mat-form-field[1]/div/div[1]/div[3]/mat-select"),
         SecurityAnswerTextFieldPath("/html/body/app-root/div/mat-sidenav-container/mat-sidenav-content/app-register/div/mat-card/div[2]/div[1]/mat-form-field[2]/div/div[1]/div[3]/input"),
         RegistrationButtonPath("/html/body/app-root/div/mat-sidenav-container/mat-sidenav-content/app-register/div/mat-card/div[2]/button"),
-        FalseFlagRegistrationMsgPath("/html/body/app-root/div/mat-sidenav-container/mat-sidenav-content/app-challenge-solved-notification/div/mat-card/div[1]");
+        FalseFlagRegistrationMsgPath("/html/body/app-root/div/mat-sidenav-container/mat-sidenav-content/app-challenge-solved-notification/div/mat-card/div[1]"),
+        FLAWED_ENDPOINT("http://localhost:3000/api/Users"),
+        FLAWED_REGISTRATION_PAYLOAD("{\"email\":\"admin\",\"password\":\"admin\",\"role\":\"admin\"}");
 
         public final String label;
         SecurityFlaw(String label) {
