@@ -68,7 +68,7 @@ https://github.com/TitusQuinctiusFlamininus/InterviewCode.git
 
 7. **Run all the Tests**
 
-First, start up the Docker Daemon by starting the Docker Desktop App; then run Maven: 
+First, **start up the Docker Daemon by starting the Docker Desktop App**; then run Maven: 
 
 **mvn clean package**
 
