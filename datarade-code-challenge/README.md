@@ -10,9 +10,9 @@
 #### Date:      June 2024
 ------------------------------------------
 
-### Tech Stack Used
+## Tech Stack Used
 
-## Software
+#### Software
 
 Language              :   Java
 JDK                   :   OpenJDK 22
@@ -22,7 +22,7 @@ Test Lib              :   JUnit 4.8.1
 Brower-Test-Framework : Selenium 4.22.0
 HTTP Lib              : OKHttp 4.12.0
 
-## Hardware
+#### Hardware
 Macbook Pro Apple Silicon 
 Type: M1 Max 16-Inch Laptop
 
