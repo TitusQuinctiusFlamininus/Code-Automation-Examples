@@ -1,7 +1,7 @@
 -----------------------------------------------------------------------------------------------------------
-```diff
-+ OWASP CODING CHALLENGE
-```
+
+# OWASP CODING CHALLENGE
+
 
 ![](https://github.com/TitusQuinctiusFlamininus/InterviewCode/blob/main/datarade-code-challenge/screenshots/challenge_ss_7.png)
 
