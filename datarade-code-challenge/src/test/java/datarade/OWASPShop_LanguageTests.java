@@ -8,7 +8,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import static datarade.OWASPShop_Enums.Language.*;
-import static datarade.OWASPShop_Enums.Navigation.HeaderTextPath;
+import static datarade.OWASPShop_Enums.Navigation.*;
 import static org.junit.Assert.*;
 
 public class OWASPShop_LanguageTests extends OWASPShop_TestManager {

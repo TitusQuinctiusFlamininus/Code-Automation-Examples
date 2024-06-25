@@ -1,6 +1,5 @@
 package datarade;
 
-import org.junit.Ignore;
 import org.junit.Test;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -58,7 +57,6 @@ public class OWASPShop_ItemPerPageTests extends OWASPShop_TestManager {
   and the last page has 11, making a total of 35 Store items
  */
 
-    @Ignore
     @Test
     public void verify_Highest_Number_Of_Items_Per_Page_Count_Correct_Count_On_Every_Page() throws InterruptedException {
             selectNumberOfItemsPerPage("36");

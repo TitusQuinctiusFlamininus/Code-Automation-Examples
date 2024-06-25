@@ -1,7 +1,6 @@
 package datarade;
 
 import okhttp3.*;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -11,7 +10,6 @@ import java.io.IOException;
 import static datarade.OWASPShop_Enums.Authentication.*;
 import static datarade.OWASPShop_Enums.SecurityFlaw.*;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 public class OWASPShop_SecurityFlawTests extends OWASPShop_TestManager {
 
@@ -19,7 +17,7 @@ public class OWASPShop_SecurityFlawTests extends OWASPShop_TestManager {
         super(new ChromeDriver());
     }
 
-    @Ignore
+
     @Test
     public void verify_Registration_Repeat_Password_Field_Not_Matching_Original_Password() throws InterruptedException {
         String okPassWd = "123456789";
