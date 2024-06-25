@@ -1,6 +1,6 @@
 -----------------------------------------------------------------------------------------------------------
 
-# OWASP CODING CHALLENGE
+# <code style="color : purple">OWASP CODING CHALLENGE</code>
 
 ![](https://github.com/TitusQuinctiusFlamininus/InterviewCode/blob/main/datarade-code-challenge/screenshots/challenge_ss_7.png)
 
