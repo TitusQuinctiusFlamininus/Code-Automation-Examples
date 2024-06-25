@@ -41,7 +41,7 @@ https://formulae.brew.sh/formula/maven
 Make sure the executable "mvn" is in the System PATH environment variable
 
 
-2. **Install either a Java SDK or JDK** (one can use the Oracle version as well):
+2. **Install a Java SDK** (one can use the Oracle version as well):
 
 https://www.oracle.com/java/technologies/downloads/ 
 
