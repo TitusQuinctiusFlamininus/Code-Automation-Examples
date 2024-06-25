@@ -10,6 +10,24 @@
 #### Date:      June 2024
 ------------------------------------------
 
+### Tech Stack Used
+
+## Software
+
+Language              :   Java
+JDK                   :   OpenJDK 22
+IDE                   :   IntelliJ 2024.1.2 (Ultimate Edition)
+Build-Tool            :   Apache Maven 3.9.7
+Test Lib              :   JUnit 4.8.1
+Brower-Test-Framework : Selenium 4.22.0
+HTTP Lib              : OKHttp 4.12.0
+
+## Hardware
+Macbook Pro Apple Silicon 
+Type: M1 Max 16-Inch Laptop
+
+------------------------------------------
+
 
 ### HOW TO RUN THE OWASP CODING CHALLENGE
 ------------------------------------------
@@ -27,22 +45,29 @@ https://www.oracle.com/java/technologies/downloads/
 
 Make sure the executable "java" is in the System PATH environment variable
 
+3. Install Docker Desktop (to run the Docker Daemon)
 
-3. **Clone the Code Challenge Repository**: 
+https://www.docker.com/products/docker-desktop/
+
+
+4. **Clone the Code Challenge Repository**: 
 
 https://github.com/TitusQuinctiusFlamininus/InterviewCode.git
 
 
-4. **Open a Terminal and change into the directory the project was cloned**
+5. **Open a Terminal and change into the directory the project was cloned**
 
 
-5. Add Execution Permission to two shell scripts, by running the following commands on a terminal:
+6. Add Execution Permission to two shell scripts, by running the following commands on a terminal:
 
 **chmod +x remove-port-hog.sh**
 **chmod +x stop-container.sh**
 
 
 6. **Run all the Tests** by running the command: 
+
+6.1 First, start up the Docker Daemon by starting the Docker Desktop App
+6.2. Run maven: 
 
 **mvn clean package**
 
