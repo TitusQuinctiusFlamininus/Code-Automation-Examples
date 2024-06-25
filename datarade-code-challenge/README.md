@@ -8,21 +8,23 @@
 #### Author:    Ngumbah Michael Nyika
 #### Language:  Java
 #### Date:      June 2024
+
 ------------------------------------------
 
 ## Tech Stack Used
 
 #### Software
 
-Language:    Java
-JDK:    OpenJDK 22
-IDE:    IntelliJ 2024.1.2 (Ultimate Edition)
-Build-Tool:    Apache Maven 3.9.7
-Test Lib:    JUnit 4.8.1
-Brower-Test-Framework:    Selenium 4.22.0
-HTTP Lib:    OKHttp 4.12.0
+##### Language:    Java
+##### JDK:    OpenJDK 22
+##### IDE:    IntelliJ 2024.1.2 (Ultimate Edition)
+##### Build-Tool:    Apache Maven 3.9.7
+##### Test Lib:    JUnit 4.8.1
+##### Brower-Test-Framework:    Selenium 4.22.0
+##### HTTP Lib:    OKHttp 4.12.0
 
 #### Hardware
+
 Macbook Pro Apple Silicon 
 Type: M1 Max 16-Inch Laptop
 
