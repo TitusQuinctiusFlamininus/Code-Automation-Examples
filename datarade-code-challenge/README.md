@@ -14,9 +14,9 @@
 
 #### Software
 
-Language              :   Java
-JDK                   :   OpenJDK 22
-IDE                   :   IntelliJ 2024.1.2 (Ultimate Edition)
+Language              ->    Java
+JDK                   ->   OpenJDK 22
+IDE                      IntelliJ 2024.1.2 (Ultimate Edition)
 Build-Tool            :   Apache Maven 3.9.7
 Test Lib              :   JUnit 4.8.1
 Brower-Test-Framework : Selenium 4.22.0
