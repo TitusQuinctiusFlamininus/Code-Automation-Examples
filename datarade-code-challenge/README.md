@@ -1,11 +1,11 @@
 -----------------------------------------------------------------------------------------------------------
 
 
-#HOW TO RUN THE OWASP CODING CHALLENGE
+# HOW TO RUN THE OWASP CODING CHALLENGE
 
-##Author:    Ngumbah Michael Nyika
-##Language:  Java
-##Date:      June 2024
+## Author:    Ngumbah Michael Nyika
+## Language:  Java
+## Date:      June 2024
 
 1. Download and Install Maven: Follow instructions here (if using brew)
 
