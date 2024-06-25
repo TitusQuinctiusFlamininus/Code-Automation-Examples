@@ -62,8 +62,8 @@ https://github.com/TitusQuinctiusFlamininus/InterviewCode.git
 
 6. Add Execution Permission to two shell scripts, by running the following commands on a terminal:
 
-**chmod +x remove-port-hog.sh**
-**chmod +x stop-container.sh**
+#### **chmod +x remove-port-hog.sh**
+#### **chmod +x stop-container.sh**
 
 
 7. **Run all the Tests** by running the command: 
