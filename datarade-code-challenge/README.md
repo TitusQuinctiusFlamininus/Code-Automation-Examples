@@ -13,7 +13,7 @@
 
 ## Tech Stack Used
 
-#### Software
+### Software
 
 ##### Language:    Java
 ##### JDK:    OpenJDK 22
@@ -23,7 +23,7 @@
 ##### Brower-Test-Framework:    Selenium 4.22.0
 ##### HTTP Lib:    OKHttp 4.12.0
 
-#### Hardware
+### Hardware
 
 Macbook Pro Apple Silicon 
 Type: M1 Max 16-Inch Laptop
@@ -32,7 +32,7 @@ Type: M1 Max 16-Inch Laptop
 
 
 ### HOW TO RUN THE OWASP CODING CHALLENGE
-------------------------------------------
+
 
 1. **Download and Install Maven**: Follow instructions here (if using brew)
 
