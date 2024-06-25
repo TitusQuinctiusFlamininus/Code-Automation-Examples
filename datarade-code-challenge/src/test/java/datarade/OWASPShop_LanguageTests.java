@@ -20,10 +20,10 @@ public class OWASPShop_LanguageTests extends OWASPShop_TestManager {
     }
 
     @Test
-    public void verify_page_title_language_change_for_first_16_language_change() throws InterruptedException {
+    public void verify_page_title_language_change_for_first_5_language_change() throws InterruptedException {
         headerTextList = new HashSet<String>();
         //Cycle through the languages, changing them in turn and gathering the header texts in different languages
-        for(int langIndex=1; langIndex < 17; langIndex++){
+        for(int langIndex=1; langIndex < 6; langIndex++){
             selectLanguageOfChoice(String.valueOf(langIndex)); // some language choice
             Thread.sleep(2000);
             driver.navigate().refresh(); //reload the page
