@@ -46,9 +46,7 @@ public class OWASPShop_LanguageTests extends OWASPShop_TestManager {
      */
 
     @Test
-    public void verify_English_German_Or_French_ItemsLabels_Do_Not_Appear_In_Each_Others_Lists()
-    {
-        try {
+    public void verify_English_German_Or_French_ItemsLabels_Do_Not_Appear_In_Each_Others_Lists() throws InterruptedException {
             //Default language is english, so let's just get the english item labels immediately
             List<WebElement> englishLanguageItems = getAllWebElements("Printing First Page Items (In English)...\n");
             Thread.sleep(3000);
@@ -76,16 +74,7 @@ public class OWASPShop_LanguageTests extends OWASPShop_TestManager {
                 assertFalse("Some Items Labelled in German Appear in the List of French Items!",
                         frenchLanguageItems.contains(gElement));
             }
-        }
-        catch (Exception e) {
-            e.printStackTrace();
-        }
-        finally {
-            driver.manage().deleteAllCookies();
-            cleanUp();
-        }
     }
-
 
     public Set<String> getHeaderTextList() {
         return headerTextList;

@@ -25,10 +25,7 @@ public class OWASPShop_ItemPaginationTests extends OWASPShop_TestManager {
     although this could have been done with any language.
     */
     @Test
-    public void check_Pagination_Contains_Different_Items()
-    {
-        try {
-            Thread.sleep(3000);
+    public void check_Pagination_Contains_Different_Items() throws InterruptedException {
             List<WebElement> p1Items = getAllWebElements("Printing All Page 1 Items out ...\n");
             Thread.sleep(3000);
             clickNextPageButton();
@@ -48,14 +45,6 @@ public class OWASPShop_ItemPaginationTests extends OWASPShop_TestManager {
             for  (WebElement pElement : p2Items) {
                 assertFalse("Some elements on Page 2 appeared in Page 3", p3Items.contains(pElement));
             }
-        }
-        catch (Exception e) {
-            e.printStackTrace();
-        }
-        finally {
-            driver.manage().deleteAllCookies();
-            cleanUp();
-        }
     }
 
 }
