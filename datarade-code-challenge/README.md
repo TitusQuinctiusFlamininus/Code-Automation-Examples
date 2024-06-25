@@ -4,12 +4,13 @@
 
 ![](https://github.com/TitusQuinctiusFlamininus/InterviewCode/blob/main/datarade-code-challenge/screenshots/challenge_ss_7.png)
 
+#### Author:    Ngumbah Michael Nyika
+#### Language:  Java
+#### Date:      June 2024
 
-## HOW TO RUN THE OWASP CODING CHALLENGE
 
-### Author:    Ngumbah Michael Nyika
-### Language:  Java
-### Date:      June 2024
+### HOW TO RUN THE OWASP CODING CHALLENGE
+------------------------------------------
 
 1. **Download and Install Maven**: Follow instructions here (if using brew)
 
