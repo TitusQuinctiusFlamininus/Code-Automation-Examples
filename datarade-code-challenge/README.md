@@ -22,6 +22,8 @@
 ##### Test Lib:    JUnit 4.8.1
 ##### Brower-Test-Framework:    Selenium 4.22.0
 ##### HTTP Lib:    OKHttp 4.12.0
+##### Browser Tested: Google Chrome 126.0.6478.63 (Official Build) (arm64)
+
 
 ### Hardware
 
