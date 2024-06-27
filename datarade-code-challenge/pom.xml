@@ -10,7 +10,7 @@
   <contributors>
     <contributor>
       <name>Ngumbah Michael Nyika</name>
-      <email>mnyika@gmail.com</email>
+      <email>myEmail</email>
       <url>https://github.com/TitusQuinctiusFlamininus/InterviewCode/tree/main/datarade-code-challenge</url>
       <organization>Ngumbah Michael Nyika</organization>
       <organizationUrl>https://github.com/TitusQuinctiusFlamininus</organizationUrl>
@@ -47,9 +47,9 @@
             <arguments>
               <argument>login</argument>
               <argument>-u</argument>
-              <argument>nyix759</argument>
+              <argument>username</argument>
               <argument>-p</argument>
-              <argument>xHfCQdPlPBgCKHJCjBRN</argument>
+              <argument>password</argument>
             </arguments>
           </configuration>
         </execution>
