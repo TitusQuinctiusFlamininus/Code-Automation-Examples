@@ -30,13 +30,13 @@ public class PositiveUploadTest {
     private AbstractMap.SimpleEntry<String, String> authTokenEntry;
 
     //ENDPOINTS
-    private String userCreationUrl = "https://qa.und-gesund.de/restjson/v5/accessToken";
-    private String uploadDataUrl = "https://qa.und-gesund.de/restjson/v5/userInformation";
-    private String downloadDataUrl = "https://qa.und-gesund.de/restjson/v5/dynamicEpochValues";
+    private String userCreationUrl = "someUrl";
+    private String uploadDataUrl = "someUrl1";
+    private String downloadDataUrl = "someUrl2";
 
     //SECURITY CREDS
-    private String authString = "applicationtest-api:fyNbjcr5g9GUS5tE";
-    private String appAuthString = "mmixU2uX6Q31mrIg:5y81Oeht3YrO2ooQkCJVuqiXcVtbLmIVzXyBh21HSePqBCxL8riuYAp8pD3jQ1DW";
+    private String authString = "someAuth";
+    private String appAuthString = "someAppAuth";
 
     //Access credentials do not change, therefore we can sort out the formatting only once
     @Before
