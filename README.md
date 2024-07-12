@@ -1,5 +1,6 @@
 # Coding Automation Examples
 ------
+![](https://github.com/TitusQuinctiusFlamininus/Code-Automation-Examples/blob/main/Images/agpl.png)
 
 If you find any of the code useful to you in your own way as a developer, feel free to use it under the condition below
 
