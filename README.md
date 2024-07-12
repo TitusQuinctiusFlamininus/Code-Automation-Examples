@@ -6,7 +6,7 @@ If you find any of the code useful to you in your own way as a developer, feel f
 Please do not just clone, copy, paste and edit. Be respectful
 and honest. 
 
-Please Note that all Examples are **APGL Licensed**. This is a strong Copy-Left License. 
+All Example code is **APGL Licensed**. This is a strong Copy-Left License. 
 
 This means that Users of AGPL-licensed code must:
 
