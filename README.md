@@ -11,5 +11,6 @@ This means that Users of AGPL-licensed code must:
 2. State all significant changes made to the original software
 3. Make available the source code when you distribute any works based on the licensed software
 4. Include any installation information necessary to update and reinstall the software if the program is being used as part of a consumer device
+5. Very Importantly: **If you make access to modified software available to users over a network, you must make your source code available to those users**.
 
 ------
