@@ -81,11 +81,11 @@ Docker Hub Login Credentials Note : You have the option to change the Docker Hub
 ### RUNNING TESTS (Some Screenshots)
 ------------------------------------------
 
-![](https://github.com/TitusQuinctiusFlamininus/Code-Automation-Examples/tree/main/Selenium-Java-Example/screenshots/challenge_ss_5.png)
+![](https://github.com/TitusQuinctiusFlamininus/Code-Automation-Examples/blob/main/Selenium-Java-Example/screenshots/challenge_ss_5.png)
 
-![](https://github.com/TitusQuinctiusFlamininus/Code-Automation-Examples/tree/main/Selenium-Java-Example/screenshots/challenge_ss_9.png)
+![](https://github.com/TitusQuinctiusFlamininus/Code-Automation-Examples/blob/main/Selenium-Java-Example/screenshots/challenge_ss_9.png)
 
-![](https://github.com/TitusQuinctiusFlamininus/Code-Automation-Examples/tree/main/Selenium-Java-Example/screenshots/challenge_ss_1.png)
+![](https://github.com/TitusQuinctiusFlamininus/Code-Automation-Examples/blob/main/Selenium-Java-Example/screenshots/challenge_ss_1.png)
 
 
 -----------------------------------------------------------------------------------------------------------
