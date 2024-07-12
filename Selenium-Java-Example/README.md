@@ -1,6 +1,6 @@
 -----------------------------------------------------------------------------------------------------------
 
-# OWASP JUICE SHOP AUTOMATION EXAMPLE
+# OWASP JUICE SHOP SELENIUM AUTOMATION EXAMPLE
 
 
 ![](https://github.com/TitusQuinctiusFlamininus/Code-Automation-Examples/blob/main/Selenium-Java-Example/screenshots/challenge_ss_7.png)
@@ -33,7 +33,7 @@ Type: M1 Max 16-Inch Laptop
 ------------------------------------------
 
 
-### HOW TO RUN THE OWASP CODING CHALLENGE
+### HOW TO RUN THE AUTOMATION CODE
 
 
 1. **Download and Install Maven**: Follow instructions here (if using brew)
@@ -54,9 +54,9 @@ Make sure the executable "java" is in the System PATH environment variable
 https://www.docker.com/products/docker-desktop/
 
 
-4. **Clone the Code Challenge Repository**: 
+4. **Clone the Repository**: 
 
-https://github.com/TitusQuinctiusFlamininus/InterviewCode.git
+https://github.com/TitusQuinctiusFlamininus/Code-Automation-Examples.git
 
 
 5. **Open a Terminal and change into the directory the project was cloned**
