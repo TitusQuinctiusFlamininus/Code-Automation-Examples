@@ -67,8 +67,8 @@ used by the API tests. API tests received their own basic authentication usernam
 ---
 ## Test Run Screenshots
 
-![](https://github.com/TitusQuinctiusFlamininus/Inteview_Code/blob/main/nyika-knime-code-exercise/images/robot_acceptance_test_report.png)
-![](https://github.com/TitusQuinctiusFlamininus/Inteview_Code/blob/main/nyika-knime-code-exercise/images/robot_acceptance_test_log.png)
+![](https://github.com/TitusQuinctiusFlamininus/Code-Automation-Examples/blob/main/Robot-Framework-Automation-Example/images/robot_acceptance_test_report.png)
+![](https://github.com/TitusQuinctiusFlamininus/Code-Automation-Examples/blob/main/Robot-Framework-Automation-Example/images/robot_acceptance_test_log.png)
 
 
 
