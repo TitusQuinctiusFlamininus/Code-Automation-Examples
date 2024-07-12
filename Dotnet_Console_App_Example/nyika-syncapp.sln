@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nyika-SyncApp-Exercise", "Nyika-SyncApp-Exercise\Nyika-SyncApp-Exercise.csproj", "{8D78EF2A-1E4B-4552-A9AA-3AFB990AD634}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Nyika-SyncApp-Exercise", "Nyika-SyncApp-Exercise", "{8A2CF0E0-8358-4642-B81C-A0DA4357AE19}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Nyika-SyncApp-Exercise\Tests\Tests.csproj", "{6CAB5BE8-D5B4-402F-B702-8D52FE10B3DB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8D78EF2A-1E4B-4552-A9AA-3AFB990AD634}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D78EF2A-1E4B-4552-A9AA-3AFB990AD634}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D78EF2A-1E4B-4552-A9AA-3AFB990AD634}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D78EF2A-1E4B-4552-A9AA-3AFB990AD634}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CAB5BE8-D5B4-402F-B702-8D52FE10B3DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CAB5BE8-D5B4-402F-B702-8D52FE10B3DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CAB5BE8-D5B4-402F-B702-8D52FE10B3DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CAB5BE8-D5B4-402F-B702-8D52FE10B3DB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8D78EF2A-1E4B-4552-A9AA-3AFB990AD634} = {8A2CF0E0-8358-4642-B81C-A0DA4357AE19}
+		{6CAB5BE8-D5B4-402F-B702-8D52FE10B3DB} = {8A2CF0E0-8358-4642-B81C-A0DA4357AE19}
+	EndGlobalSection
+EndGlobal
