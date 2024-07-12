@@ -3,7 +3,7 @@
 # OWASP JUICE SHOP AUTOMATION EXAMPLE
 
 
-![](https://github.com/TitusQuinctiusFlamininus/Code-Automation-Examples/blob/main/datarade-code-challenge/screenshots/challenge_ss_7.png)
+![](https://github.com/TitusQuinctiusFlamininus/Code-Automation-Examples/blob/main/Selenium-Java-Example/screenshots/challenge_ss_7.png)
 
 #### Author:    Ngumbah Michael Nyika
 #### Language:  Java
