@@ -74,7 +74,7 @@ First, **start up the Docker Daemon by starting the Docker Desktop App**; then r
 
 **mvn clean package**
 
-This command will run all the tests in the OWASP Datarade TestSuite
+This command will run all the tests in the OWAS TestSuite
 
 Docker Hub Login Credentials Note : You have the option to change the Docker Hub Login Credentials in the maven pom.xml file (Lines 48 through 52) with your own Hub credentials. They are used to login to the Docker Hub and download the latest OWASP docker image for the web application. The credentials presented there are for a trial account. 
 
