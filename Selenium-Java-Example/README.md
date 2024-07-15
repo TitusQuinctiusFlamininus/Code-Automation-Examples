@@ -35,7 +35,7 @@ The OWASP web application is in a docker image.
 ### Hardware
 
 Macbook Pro Apple Silicon 
-Type: M1 Max 16-Inch Laptop
+Type: M1 Max
 
 ------------------------------------------
 
