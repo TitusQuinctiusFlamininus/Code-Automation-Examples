@@ -10,6 +10,8 @@ this project: https://owasp.org/www-project-juice-shop/
 
 The OWASP web application is in a docker image.
 
+--------
+
 #### Author:    Ngumbah Michael Nyika
 #### Language:  Java
 #### Date:      June 2024
