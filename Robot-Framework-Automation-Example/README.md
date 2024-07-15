@@ -11,7 +11,7 @@ MacBook Pro 16-Inch (Apple M1 Max Silicon 64-Bit)
 
 -----
 ### General Software and Configuration
-#### IDE: IntelliJ Ultimate Edition 2024.1.2
+#### IDE: IntelliJ Community Edition
 #### Build Tool: Maven 4.0.0
 #### Maven Test Runner: Surefire Plugin 2.22.1
 
