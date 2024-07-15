@@ -5,7 +5,7 @@
 
 ![](https://github.com/TitusQuinctiusFlamininus/Code-Automation-Examples/blob/main/Selenium-Java-Example/screenshots/challenge_ss_7.png)
 
-The aim is to run some automation against 
+The aim is to run some UI automation against 
 this project: https://owasp.org/www-project-juice-shop/
 
 
