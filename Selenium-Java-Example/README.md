@@ -8,6 +8,7 @@
 The aim is to run some UI automation against 
 this project: https://owasp.org/www-project-juice-shop/
 
+The OWASP web application is in a docker image.
 
 #### Author:    Ngumbah Michael Nyika
 #### Language:  Java
@@ -80,7 +81,7 @@ First, **start up the Docker Daemon by starting the Docker Desktop App**; then r
 
 This command will run all the tests in the OWAS TestSuite
 
-Docker Hub Login Credentials Note : You have the option to change the Docker Hub Login Credentials in the maven pom.xml file (Lines 48 through 52) with your own Hub credentials. They are used to login to the Docker Hub and download the latest OWASP docker image for the web application. The credentials presented there are for a trial account. 
+Docker Hub Login Credentials Note : You have the option to change the Docker Hub Login Credentials in the maven pom.xml file (Lines 48 through 52) with your own Hub credentials. They are used to login to the Docker Hub and download the latest OWASP docker image for the web application.
 
 ### RUNNING TESTS (Some Screenshots)
 ------------------------------------------
