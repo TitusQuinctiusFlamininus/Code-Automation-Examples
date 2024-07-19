@@ -1,1 +1,1 @@
-# Thryve-UploadData-Haskell
+# Haskell REST API Examples
