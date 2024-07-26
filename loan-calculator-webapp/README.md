@@ -363,7 +363,7 @@ numerals with specific decimal places, etc)
 ## The Loan Calculator API Interface
 
 ### Creating a Customer
-![](https://github.com/TitusQuinctiusFlamininus/Code-Automation-Examples/blob/main/loan-calculator-webapp/images/API_Endpoint_Create_Customer.png)
+![](https://github.com/TitusQuinctiusFlamininus/Code-Automation-Examples/blob/main/loan-calculator-webapp/images/api_endpoint_Create_Customer.png)
 
 ### Creating a Loan Offer
 ![](https://github.com/TitusQuinctiusFlamininus/Code-Automation-Examples/blob/main/loan-calculator-webapp/images/API_Endpoint_Create_LoanOffer.png)
