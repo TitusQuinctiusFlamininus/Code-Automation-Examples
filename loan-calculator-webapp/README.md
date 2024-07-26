@@ -366,15 +366,15 @@ numerals with specific decimal places, etc)
 ![](https://github.com/TitusQuinctiusFlamininus/Code-Automation-Examples/blob/main/loan-calculator-webapp/images/api_endpoint_Create_Customer.png)
 
 ### Creating a Loan Offer
-![](https://github.com/TitusQuinctiusFlamininus/Code-Automation-Examples/blob/main/loan-calculator-webapp/images/API_Endpoint_Create_LoanOffer.png)
+![](https://github.com/TitusQuinctiusFlamininus/Code-Automation-Examples/blob/main/loan-calculator-webapp/images/api_endpoint_Create_LoanOffer.png)
 
 
 ### Display a Customer By ID
-![](https://github.com/TitusQuinctiusFlamininus/Code-Automation-Examples/blob/main/loan-calculator-webapp/images/API_Endpoint_Display_Customer_By_Id.png)
+![](https://github.com/TitusQuinctiusFlamininus/Code-Automation-Examples/blob/main/loan-calculator-webapp/images/api_endpoint_Display_Customer_By_Id.png)
 
 
 ### Display a Loan Offer By ID
-![](https://github.com/TitusQuinctiusFlamininus/Code-Automation-Examples/blob/main/loan-calculator-webapp/images/API_Endpoint_Display_LoanOffer_By_Id.png)
+![](https://github.com/TitusQuinctiusFlamininus/Code-Automation-Examples/blob/main/loan-calculator-webapp/images/api_endpoint_Display_LoanOffer_By_Id.png)
 
 
 Enjoy!
