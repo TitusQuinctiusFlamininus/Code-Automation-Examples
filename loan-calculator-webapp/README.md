@@ -7,7 +7,7 @@ A Web Application that calculates the Loan Amortization Monthly Payments for Exi
 Among the required inputs are the *Loan Principal Amount*, the *Loan Period* (in months), the *Interest Rate* (as a percentage) and 
 the *Associated Customer*. The monthly payment is part of a Loan Offer. 
 
-![](https://github.com/TitusQuinctiusFlamininus/loan-calculator-webapp/blob/main/images/loanCalculator.png)
+![](https://github.com/TitusQuinctiusFlamininus/Code-Automation-Examples/blob/main/loan-calculator-webapp/images/loanCalculator.png)
 
 ------
 
@@ -29,7 +29,7 @@ the *Associated Customer*. The monthly payment is part of a Loan Offer.
 ------
 
 ## License
-![](https://github.com/TitusQuinctiusFlamininus/Code-Automation-Examples/blob/main/Images/agpl.png)
+![](https://github.com/TitusQuinctiusFlamininus/Code-Automation-Examples/blob/main/loan-calculator-webapp/images/agpl.png)
 #### All Example code is **APGL Licensed**. 
 This is a strong **Copy-Left** License. Please do not just clone, copy, paste and edit. Be respectful and honest.
 
@@ -124,7 +124,7 @@ Just make sure the Chrome executable is also in your System $PATH.
 
 ## Directory Structure
 
-![](https://github.com/TitusQuinctiusFlamininus/loan-calculator-webapp/blob/main/images/directory_structure.png)
+![](https://github.com/TitusQuinctiusFlamininus/Code-Automation-Examples/blob/main/loan-calculator-webapp/images/directory_structure.png)
 
 
 ### React Files
@@ -225,7 +225,7 @@ kill -9 [PID]
 taskkill /IM process name /F
 ```
 
-![](https://github.com/TitusQuinctiusFlamininus/loan-calculator-webapp/blob/main/images/API_Endpoint_Root.png)
+![](https://github.com/TitusQuinctiusFlamininus/Code-Automation-Examples/blob/main/loan-calculator-webapp/images/API_Endpoint_Root.png)
 
 Feel free to add new Loan Customers with the *customers* endpoint.
 
@@ -281,10 +281,10 @@ depending on your python version.
 
 The database structure created are 2 tables: **amort_customer** and **amort_loanoffer** . 
 
-![](https://github.com/TitusQuinctiusFlamininus/loan-calculator-webapp/blob/main/images/amort_customer.png)
+![](https://github.com/TitusQuinctiusFlamininus/Code-Automation-Examples/blob/main/loan-calculator-webapp/images/amort_customer.png)
 
 
-![](https://github.com/TitusQuinctiusFlamininus/loan-calculator-webapp/blob/main/images/amort_loanoffer.png)
+![](https://github.com/TitusQuinctiusFlamininus/Code-Automation-Examples/blob/main/loan-calculator-webapp/images/amort_loanoffer.png)
 
 Note: Customer ID is used as a Foreign Key in the LoanOffer Table
 
@@ -305,7 +305,7 @@ The results will be displayed in the terminal.
 
 The Web server does not have to be running for a successful run. 
 
-![](https://github.com/TitusQuinctiusFlamininus/loan-calculator-webapp/blob/main/images/jest_report.png)
+![](https://github.com/TitusQuinctiusFlamininus/Code-Automation-Examples/blob/main/loan-calculator-webapp/images/jest_report.png)
 
 ------
 
@@ -324,35 +324,35 @@ mvn verify
 This command will automatically run the Robot Tests. Maven may have to 
 download a number of dependencies into the $USER_HOME/.m2/repository directory before any tests actually run. 
 
-![](https://github.com/TitusQuinctiusFlamininus/loan-calculator-webapp/blob/main/images/uat_testing_1.png)
+![](https://github.com/TitusQuinctiusFlamininus/Code-Automation-Examples/blob/main/loan-calculator-webapp/images/uat_testing_1.png)
 
-![](https://github.com/TitusQuinctiusFlamininus/loan-calculator-webapp/blob/main/images/uat_testing_2.png)
+![](https://github.com/TitusQuinctiusFlamininus/Code-Automation-Examples/blob/main/loan-calculator-webapp/images/uat_testing_2.png)
 
 A full Test HTML Report will be located in the **target/robotframework-reports** directory, showing all the test-suites and 
 individual tests run. 
 
 ##### UAT Report Overview 
-![](https://github.com/TitusQuinctiusFlamininus/drejr-loan-calculator-webapp/blob/main/images/uat_report_3.png)
+![](https://github.com/TitusQuinctiusFlamininus/Code-Automation-Examples/blob/main/loan-calculator-webapp/images/uat_report_3.png)
 
 
 ##### UAT Report Test Listing
-![](https://github.com/TitusQuinctiusFlamininus/drejr-loan-calculator-webapp/blob/main/images/uat_report_2.png)
+![](https://github.com/TitusQuinctiusFlamininus/Code-Automation-Examples/blob/main/loan-calculator-webapp/images/uat_report_2.png)
 
 ##### UAT Report Individual Test Details
-![](https://github.com/TitusQuinctiusFlamininus/drejr-loan-calculator-webapp/blob/main/images/uat_report_1.png)
+![](https://github.com/TitusQuinctiusFlamininus/Code-Automation-Examples/blob/main/loan-calculator-webapp/images/uat_report_1.png)
 
 ------
 
 ## The Loan Calculator Web Interface
 It is only possible to compute a Monthly Amortization Payment for a specific customer. 
 
-![](https://github.com/TitusQuinctiusFlamininus/loan-calculator-webapp/blob/main/images/web_customer_association.png)
+![](https://github.com/TitusQuinctiusFlamininus/Code-Automation-Examples/blob/main/loan-calculator-webapp/images/web_customer_association.png)
 
 This is also true for the API Endpoint where one can directly add a new Load Offer. 
 
 
 
-![](https://github.com/TitusQuinctiusFlamininus/loan-calculator-webapp/blob/main/images/api_customer_association.png)
+![](https://github.com/TitusQuinctiusFlamininus/Code-Automation-Examples/blob/main/loan-calculator-webapp/images/api_customer_association.png)
 
 There is field validation for both the Web and API interfaces as well (input needs to be numbers, or 
 numerals with specific decimal places, etc)
@@ -363,18 +363,18 @@ numerals with specific decimal places, etc)
 ## The Loan Calculator API Interface
 
 ### Creating a Customer
-![](https://github.com/TitusQuinctiusFlamininus/loan-calculator-webapp/blob/main/images/API_Endpoint_Create_Customer.png)
+![](https://github.com/TitusQuinctiusFlamininus/Code-Automation-Examples/blob/main/loan-calculator-webapp/images/API_Endpoint_Create_Customer.png)
 
 ### Creating a Loan Offer
-![](https://github.com/TitusQuinctiusFlamininus/loan-calculator-webapp/blob/main/images/API_Endpoint_Create_LoanOffer.png)
+![](https://github.com/TitusQuinctiusFlamininus/Code-Automation-Examples/blob/main/loan-calculator-webapp/images/API_Endpoint_Create_LoanOffer.png)
 
 
 ### Display a Customer By ID
-![](https://github.com/TitusQuinctiusFlamininus/loan-calculator-webapp/blob/main/images/API_Endpoint_Display_Customer_By_Id.png)
+![](https://github.com/TitusQuinctiusFlamininus/Code-Automation-Examples/blob/main/loan-calculator-webapp/images/API_Endpoint_Display_Customer_By_Id.png)
 
 
 ### Display a Loan Offer By ID
-![](https://github.com/TitusQuinctiusFlamininus/loan-calculator-webapp/blob/main/images/API_Endpoint_Display_LoanOffer_By_Id.png)
+![](https://github.com/TitusQuinctiusFlamininus/Code-Automation-Examples/blob/main/loan-calculator-webapp/images/API_Endpoint_Display_LoanOffer_By_Id.png)
 
 
 Enjoy!
