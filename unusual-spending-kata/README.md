@@ -18,7 +18,12 @@ Maven Surefile plugin: 2.22.0
 Test Framework: Junit-Jupiter 5.2.0
 
 To run all tests: mvn test
-To run the application: mvn compile exec:java
 
+### Example Unusual Spending Report
+Run run this example, execute: 
+
+ mvn compile exec:java
+
+![](https://github.com/TitusQuinctiusFlamininus/Code-Automation-Examples/blob/main/unusual-spending-kata/results.png)
 
 ------
