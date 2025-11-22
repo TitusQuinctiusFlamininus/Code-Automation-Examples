@@ -9,5 +9,4 @@ public class BackstageTAFAL80ETCItemProcessor implements IItemProcessor {
         item.quality++;
         item.sellIn--;
     }
-
 }

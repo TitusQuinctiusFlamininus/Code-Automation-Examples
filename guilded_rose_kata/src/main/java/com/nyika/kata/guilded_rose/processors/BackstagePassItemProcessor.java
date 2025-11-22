@@ -2,14 +2,12 @@ package com.nyika.kata.guilded_rose.processors;
 
 import com.nyika.kata.guilded_rose.GildedRose;
 import com.nyika.kata.guilded_rose.Item;
-import com.nyika.kata.guilded_rose.ItemUtilityHelper;
 
 public class BackstagePassItemProcessor implements IItemProcessor{
 
     //Price value increases
     private static final int PREMIUM_ELEVATED_VALUE    = 2;
     private static final int SUPER_ELEVATED_VALUE      = 3;
-    private static final int DEFAULT_SELLIN_REDUX_AMT  = 1;
 
     //Sell Bounds
     private static final int SELL_UPPER_BOUND = 10;
@@ -30,7 +28,6 @@ public class BackstagePassItemProcessor implements IItemProcessor{
         else{                     
             item.quality++;   
         }     
-        ItemUtilityHelper.reduceSellinByAmt(item, DEFAULT_SELLIN_REDUX_AMT);
     }
 
     private void makePremiumIfApplicable(Item item, int priceIncrease){

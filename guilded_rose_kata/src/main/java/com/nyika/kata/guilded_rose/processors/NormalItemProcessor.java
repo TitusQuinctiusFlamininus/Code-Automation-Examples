@@ -1,14 +1,12 @@
 package com.nyika.kata.guilded_rose.processors;
 
 import com.nyika.kata.guilded_rose.Item;
-import com.nyika.kata.guilded_rose.ItemUtilityHelper;
+
 
 public class NormalItemProcessor implements IItemProcessor {
 
     private final int DEFAULT_QUALITY_REDUX_AMT = 1;
     private final int PREMIUM_QUALITY_REDUX_AMT = 2;
-    private final int DEFAULT_SELLIN_REDUX_AMT  = 1;
-
 
     @Override
     public void processItem(Item item) {  
@@ -23,7 +21,6 @@ public class NormalItemProcessor implements IItemProcessor {
         else{
                 reduceQualityByAmt(item, DEFAULT_QUALITY_REDUX_AMT);
         }
-         ItemUtilityHelper.reduceSellinByAmt(item, DEFAULT_SELLIN_REDUX_AMT);
      }
 
      private void reduceQualityByAmt(Item item, int amt){

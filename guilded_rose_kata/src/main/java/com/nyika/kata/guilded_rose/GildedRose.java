@@ -5,41 +5,33 @@ import com.nyika.kata.guilded_rose.processors.BackstagePassItemProcessor;
 import com.nyika.kata.guilded_rose.processors.BackstageTAFAL80ETCItemProcessor;
 import com.nyika.kata.guilded_rose.processors.ConjuredItemProcessor;
 import com.nyika.kata.guilded_rose.processors.IItemProcessor;
+import com.nyika.kata.guilded_rose.ItemUtilityHelper;
 import com.nyika.kata.guilded_rose.processors.NormalItemProcessor;
 
 public class GildedRose {
 
     public static final int DEFAULT_ROSE_MAX_QUALITY = 50;
+    private final int DEFAULT_SELLIN_REDUX_AMT  = 1;
 
     public static Item[] items;
-    private static IItemProcessor normalIItemProcessor;
-    private static IItemProcessor agedBrieItemProcessor;
-    private static IItemProcessor backStageItemProcessor;
-    private static IItemProcessor backStageTAFItemProcessor;
-    private static IItemProcessor conjuredItemProcessor;
+    private IItemProcessor normalIItemProcessor;
+    private IItemProcessor agedBrieItemProcessor;
+    private IItemProcessor backStageItemProcessor;
+    private IItemProcessor backStageTAFItemProcessor;
+    private IItemProcessor conjuredItemProcessor;
 
 
     public GildedRose(Item[] theItems) {
         items = theItems;
-        checkProvidersInitialization();
+        initializeProviders();
     }
 
-    private void checkProvidersInitialization(){
-        if(normalIItemProcessor==null){
-             normalIItemProcessor = new NormalItemProcessor();
-        }
-        if(agedBrieItemProcessor==null){
-             agedBrieItemProcessor = new AgedBrieItemProcessor();
-        }
-        if(conjuredItemProcessor==null){
-             conjuredItemProcessor = new ConjuredItemProcessor();
-        }
-        if(backStageItemProcessor==null){
-             backStageItemProcessor = new BackstagePassItemProcessor();
-        }
-        if(backStageTAFItemProcessor==null){
-             backStageTAFItemProcessor = new BackstageTAFAL80ETCItemProcessor();
-        }
+    private void initializeProviders(){
+         normalIItemProcessor = new NormalItemProcessor();   
+         agedBrieItemProcessor = new AgedBrieItemProcessor();   
+         conjuredItemProcessor = new ConjuredItemProcessor();  
+         backStageItemProcessor = new BackstagePassItemProcessor(); 
+         backStageTAFItemProcessor = new BackstageTAFAL80ETCItemProcessor(); 
     }
 
     //------------------------------------------------------------ 
@@ -53,20 +45,21 @@ public class GildedRose {
                 {
                     case "Aged Brie":
                         agedBrieItemProcessor.processItem(item);
-                        continue;
+                        break;
                     case "Backstage passes":
                         backStageItemProcessor.processItem(item);
-                        continue;
+                        break;
                     case "Backstage passes to a TAFKAL80ETC concert":
                        backStageTAFItemProcessor.processItem(item);
-                        continue;
+                        break;
                     case "Conjured":
                         conjuredItemProcessor.processItem(item); 
-                        continue;
+                        break;
                     default:
                         normalIItemProcessor.processItem(item);
-                        continue;
+                        break;
                 }
+                 ItemUtilityHelper.reduceSellinByAmt(item, DEFAULT_SELLIN_REDUX_AMT);
             }
         }
      }
