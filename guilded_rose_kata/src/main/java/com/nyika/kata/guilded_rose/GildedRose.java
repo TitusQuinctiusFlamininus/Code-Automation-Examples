@@ -41,28 +41,34 @@ public class GildedRose {
         for (Item item : items){
             if (item.quality <= DEFAULT_ROSE_MAX_QUALITY)
                 {
-                switch(item.name)
-                {
-                    case "Aged Brie":
-                        agedBrieItemProcessor.processItem(item);
-                        break;
-                    case "Backstage passes":
-                        backStageItemProcessor.processItem(item);
-                        break;
-                    case "Backstage passes to a TAFKAL80ETC concert":
-                       backStageTAFItemProcessor.processItem(item);
-                        break;
-                    case "Conjured":
-                        conjuredItemProcessor.processItem(item); 
-                        break;
-                    default:
-                        normalIItemProcessor.processItem(item);
-                        break;
-                }
+                authenticateItemType(item).processItem(item);
                  ItemUtilityHelper.reduceSellinByAmt(item, DEFAULT_SELLIN_REDUX_AMT);
             }
         }
      }
+
+     private IItemProcessor authenticateItemType(Item item){
+         IItemProcessor processor;
+         switch(item.name)
+                {
+                    case "Aged Brie":
+                        processor = agedBrieItemProcessor;
+                        break;
+                    case "Backstage passes":
+                        processor = backStageItemProcessor;
+                        break;
+                    case "Backstage passes to a TAFKAL80ETC concert":
+                       processor = backStageTAFItemProcessor;
+                        break;
+                    case "Conjured":
+                        processor = conjuredItemProcessor; 
+                        break;
+                    default:
+                        processor = normalIItemProcessor;
+                        break;
+                }
+         return processor;
+     }  
 
     //------------------------------------------------------------ 
     //OLD IMPLEMENTATION
